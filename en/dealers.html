@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dealers — BBB | Bhimber Business Bureau</title>
+<meta name="description" content="BBB — Bhimber Business Bureau brings property buyers, sellers and dealers together across District Bhimber, with clear listing information and a visib">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Amiri:wght@400;700&family=Cairo:wght@400;700;800&display=swap" rel="stylesheet"><link rel="icon" href="../assets/img/logo.png"><link rel="stylesheet" href="../assets/site.css"></head>
+<body data-sell-url="../en/sell.html"><div class="aura"></div><canvas id="dust"></canvas>
+<header class="site"><div class="container hd-in">
+<a class="brand" href="../en/index.html"><img src="../assets/img/logo.png" alt="BBB"><span><b>BBB</b><small>Bhimber Business Bureau</small></span></a>
+<nav class="main"><a href="../en/index.html" class="">Home</a><a href="../en/listings.html" class="">Listings</a><a href="../en/sell.html" class="">Sell & Wanted</a><a href="../en/dealers.html" class="cur">Dealers</a><a href="../en/calculator.html" class="">Calculator</a><a href="../en/about.html" class="">About Us</a><a href="../en/stories.html" class="">Awareness</a><a href="../en/contact.html" class="">Contact</a></nav><div class="langs"><a href="../dealers.html" class="">اردو</a><a href="../en/dealers.html" class="cur">EN</a><a href="../ar/dealers.html" class="">عربي</a></div>
+<button class="burger" aria-label="menu">☰</button></div></header>
+<main><div class="phead container"><div class="kicker hero-up">BBB · BHIMBER BUSINESS BUREAU</div><h1 class="hero-up d1">Dealers</h1><p class="hero-up d2">Open a dealer account and browse the BBB dealer directory.</p></div><div class="container"><p class="note rv" style="margin:6px 0 4px">Working forms on this site are in Urdu, our team's working language. For help in English, message us on WhatsApp.</p></div><section id="dealers">
+  <div class="container">
+    <div class="sec-head"><div><div class="kicker">DEALERS · ڈیلر اکاؤنٹ</div><h2>Dealers</h2></div></div>
+    <p class="sub">ڈیلر کو ملے گا: اپنا عوامی صفحہ، لسٹنگز کا انتظام، ہر انکوائری کی گنتی (لیڈز)، 7 دن کی تازگی گھڑی اور مانگ ملانا۔ اکاؤنٹ بنانا مفت ہے (لانچ آفر — شرائط کا فیصلہ BBB کا)۔ تصدیق کے لیے BBB دفتر/ایجنسی اور 2 حوالے چیک کرے گا؛ CNIC کبھی عوامی نہیں ہوگا۔</p>
+    <div class="form-card">
+      <form onsubmit="registerDealer(event)">
+        <div class="form-grid">
+          <div><label>آپ کا نام *</label><input id="D-name" type="text" placeholder="نام"></div>
+          <div><label>موبائل / WhatsApp *</label><input id="D-mobile" type="tel" placeholder="03XX-XXXXXXX" class="en" style="direction:ltr;text-align:right"></div>
+          <div><label>ایجنسی / دفتر کا نام</label><input id="D-agency" type="text" placeholder="مثلاً: چوہدری پراپرٹی سنٹر"></div>
+          <div><label>دفتر کا علاقہ *</label><select id="D-tehsil"><option value="bhimber">بھمبر</option><option value="barnala">برنالہ</option><option value="samahni">سماہنی</option></select></div>
+          <div class="full"><label>کن علاقوں میں کام کرتے ہیں؟ *</label><input id="D-areas" type="text" placeholder="مثلاً: چریاں، سیرلہ، بلدیہ حدود"></div>
+          <div><label>تجربہ (سال)</label><input id="D-exp" type="number" min="0" placeholder="مثلاً: 5"></div>
+        </div>
+        <button class="btn btn-wa" type="submit" style="width:100%;margin-top:14px">ڈیلر اکاؤنٹ بنائیں</button>
+        <p class="field-note" id="dealer-msg" style="margin-top:8px"></p>
+      </form>
+    </div>
+    <div class="dash" id="dealer-dash">
+      <h3>📊 میرا ڈیش بورڈ — <span id="dash-name"></span></h3>
+      <div class="dash-stats">
+        <div><b id="dash-listings">0</b><span>میری لسٹنگز</span></div>
+        <div><b id="dash-leads">0</b><span>لیڈز (WhatsApp کلکس)</span></div>
+        <div><b id="dash-wanted">0</b><span>میری مانگیں</span></div>
+        <div><b id="dash-fresh">—</b><span>تازہ ترین لسٹنگ کی تازگی</span></div>
+      </div>
+      <p class="field-note">تازگی کا اصول: ہر لسٹنگ 7 دن تازہ رہتی ہے — پھر خود چھپ جاتی ہے، جب تک آپ اسے دوبارہ تصدیق نہ کریں۔ یہی اصول خریدار کا اعتماد بناتا ہے۔</p>
+    </div>
+    <div class="dealer-grid" id="dealer-grid"></div>
+  </div>
+</section>
+
+<section class="blk container"><div class="sec-head rv"><h2>Contractor Directory — Construction</h2></div><div id="contractor-grid" class="grid"></div></section>
+<section class="blk container"><div class="sec-head rv"><h2>Construction Wanted — Approved Requirements</h2></div><div id="cneed-grid" class="grid"></div></section></main>
+<footer class="site"><div class="container">
+<div class="ft">
+<div><h3>BBB — Bhimber Business Bureau</h3><p>Your Local Connection to Property in Bhimber.</p><p style="margin-top:6px">Coverage: Bhimber | Barnala | Samahni | District Bhimber, AJK</p>
+<p style="margin-top:8px">WhatsApp: <a class="en" href="https://wa.me/923179222029" target="_blank" rel="noopener">0317-9222029</a><br>Facebook: <a href="https://www.facebook.com/bhimberbusinessofficial" target="_blank" rel="noopener">@bhimberbusinessofficial</a></p></div>
+<div><h3>Listings</h3><nav><a href="../en/index.html">Home</a><a href="../en/listings.html">Listings</a><a href="../en/sell.html">Sell & Wanted</a><a href="../en/dealers.html">Dealers</a><a href="../en/calculator.html">Calculator</a><a href="../en/about.html">About Us</a><a href="../en/stories.html">Awareness</a><a href="../en/contact.html">Contact</a></nav></div>
+<div><h3>Property Matters Back Home —…</h3><p>BBB — Bhimber Business Bureau is a property sale and purchase platform serving District Bhimber, Azad Kashmir. We help people explore property opportunities, connect with…</p></div>
+</div>
+<p class="disc">Property prices and availability displayed on this platform are indicative and may change without notice. Buyers should independently verify ownership, title, revenue records, relevant documents and any applicable restrictions or disputes with the relevant revenue department and authorities before entering into a transaction. Verification labels describe the checks recorded against a listing and do not constitute a legal guarantee of ownership or title. BBB's information is provided for general guidance only and does not constitute legal advice.</p>
+<p class="sign">Bhimber Business Bureau — Contact: 0317-9222029</p>
+</div></footer>
+<a class="wa-fab" href="https://wa.me/923179222029" target="_blank" rel="noopener">💬 WhatsApp</a>
+<script>window.BBB_MSG={wa:"Hello, I am interested in BBB listing {id} ({title}). Please share the details and price."};</script><script src="../assets/data-en.js"></script><script src="../assets/geo.js"></script><script src="../assets/engine.js"></script><script src="../assets/exp.js"></script><script src="../assets/site.js"></script></body></html>

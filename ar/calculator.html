@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حاسبة البناء — BBB | Bhimber Business Bureau</title>
+<meta name="description" content="مكتب بهيمبر للأعمال العقارية (BBB) منصة محلية تجمع بين الراغبين في شراء العقارات وبيعها والوسطاء العقاريين في منطقة بهيمبر، مع عرض واضح لمعلومات كل عق">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Amiri:wght@400;700&family=Cairo:wght@400;700;800&display=swap" rel="stylesheet"><link rel="icon" href="../assets/img/logo.png"><link rel="stylesheet" href="../assets/site.css"></head>
+<body data-sell-url="../ar/sell.html"><div class="aura"></div><canvas id="dust"></canvas>
+<header class="site"><div class="container hd-in">
+<a class="brand" href="../ar/index.html"><img src="../assets/img/logo.png" alt="BBB"><span><b>BBB</b><small>Bhimber Business Bureau</small></span></a>
+<nav class="main"><a href="../ar/index.html" class="">الرئيسية</a><a href="../ar/listings.html" class="">الإعلانات</a><a href="../ar/sell.html" class="">البيع والطلب</a><a href="../ar/dealers.html" class="">الوسطاء</a><a href="../ar/calculator.html" class="cur">الحاسبة</a><a href="../ar/about.html" class="">من نحن</a><a href="../ar/stories.html" class="">التوعية</a><a href="../ar/contact.html" class="">اتصل بنا</a></nav><div class="langs"><a href="../calculator.html" class="">اردو</a><a href="../en/calculator.html" class="">EN</a><a href="../ar/calculator.html" class="cur">عربي</a></div>
+<button class="burger" aria-label="menu">☰</button></div></header>
+<main><div class="phead container"><div class="kicker hero-up">BBB · CONSTRUCTION</div><h1 class="hero-up d1">حاسبة تكلفة البناء</h1><p class="hero-up d2">تقدير للتخطيط فقط — كل سعر مذكور مع مصدره وتاريخه؛ ويمكنك تعديل أي سعر أو كمية.</p></div>
+<section class="blk container"><p class="note rv">⚠ لا توجد أسعار محلية منشورة لكل قدم مربع للممر (غوجرانوالا–راولبندي) أو آزاد كشمير — الأسعار الافتراضية أدناه هي أسعار لاهور/الوطنية المنشورة (أقرب سوق مدروس). أدخل أسعار منطقتك لتوطين التقدير.</p>
+<div class="glass rv" style="padding:22px;margin-top:14px">
+<div class="search-grid" style="grid-template-columns:1fr 1fr">
+<div><label class="fl">إجمالي المساحة المبنية (قدم مربع)</label><input id="calc-area" type="number" step="any" placeholder="e.g. 2722"></div>
+<div><label class="fl">النطاق</label><select id="calc-scope"><option value="grey">الهيكل الرمادي فقط</option><option value="full">منزل كامل (هيكل + تشطيب)</option></select></div>
+<div><label class="fl">الجودة</label><select id="calc-tier"><option value="low">اقتصادي</option><option value="mid">قياسي</option><option value="high">ممتاز</option></select></div>
+<div><label class="fl">السعر لكل قدم مربع (روبية) — قابل للتعديل</label><input id="calc-rate" type="number" step="any" value="3200"></div></div>
+<p style="font-size:13px;color:var(--muted);margin-top:8px">تستخدم هذه الحاسبة 1 مارلا = 272.25 قدم مربع. مثال: منزل 5 مارلا من طابقين ≈ 2,722 قدم مربع.</p>
+<h2 style="margin-top:16px">تقدير سريع: <span class="en" id="calc-quick-total">—</span></h2>
+<p class="en" id="calc-quick-range" style="color:var(--gold-soft)"></p>
+<h3 style="margin-top:14px">التوزيع حسب البنود (منزل كامل)</h3><div id="calc-heads"></div>
+<p class="src" id="calc-quick-src"></p></div>
+<div class="glass rv" style="padding:22px;margin-top:16px"><h2>تقدير مفصل — المواد (الهيكل الرمادي)</h2>
+<div style="overflow-x:auto"><table class="calc-t"><thead><tr><th>البند</th><th>الكمية/قدم مربع</th><th>الكمية الكلية</th><th>السعر</th><th>المبلغ</th></tr></thead><tbody id="calc-mat-body"></tbody></table></div>
+<div class="mine-row"><span style="flex:1">إجمالي المواد</span><span class="en" id="calc-mat-total">—</span></div>
+<div class="mine-row"><span style="flex:1">هالك 5٪</span><span class="en" id="calc-wastage">—</span></div></div>
+<div class="glass rv" style="padding:22px;margin-top:16px"><h2>العمالة — أدخل الأيام بنفسك (الأسعار: PBS)</h2>
+<div style="overflow-x:auto"><table class="calc-t"><thead><tr><th>البند</th><th>أيام</th><th>السعر</th><th>المبلغ</th></tr></thead><tbody id="calc-lab-body"></tbody></table></div>
+<div class="mine-row"><span style="flex:1">إجمالي العمالة</span><span class="en" id="calc-lab-total">—</span></div>
+<div class="search-grid" style="grid-template-columns:1fr 1fr;margin-top:10px"><div><label class="fl">احتياطي (٪)</label><input id="calc-cont" type="number" step="any" value="10"></div>
+<div><label class="fl">احتياطي (٪)</label><p class="en" id="calc-cont-amt">—</p></div></div>
+<h2 style="margin-top:12px">التقدير الكلي (مفصل): <span class="en" id="calc-grand">—</span></h2>
+<button class="btn btn-wa" onclick="calcShare()">إرسال التقدير عبر واتساب</button> <button class="btn btn-glass" onclick="calcReset()">إعادة تعيين إلى الأسعار الافتراضية</button></div>
+<p class="disc" style="margin-top:16px">هذه الحاسبة تعطي تقديراً للتخطيط فقط — ليست جدول كميات ولا عرض سعر من مقاول. تعتمد التكلفة الفعلية على المخططات والتصميم والعلامات وظروف الموقع وأسعار يوم الشراء. آخر فحص للأسعار: نوفمبر 2026.</p></section>
+<div class="calc-sticky"><span>التقدير الكلي (مفصل)</span><b class="en" id="calc-sticky-total">—</b></div></main>
+<footer class="site"><div class="container">
+<div class="ft">
+<div><h3>BBB — Bhimber Business Bureau</h3><p>وجهتك المحلية للتواصل العقاري في بهمبر.</p><p style="margin-top:6px">نطاق العمل: بهيمبر | برناله | سماهني | مقاطعة بهيمبر، آزاد كشمير</p>
+<p style="margin-top:8px">WhatsApp: <a class="en" href="https://wa.me/923179222029" target="_blank" rel="noopener">0317-9222029</a><br>Facebook: <a href="https://www.facebook.com/bhimberbusinessofficial" target="_blank" rel="noopener">@bhimberbusinessofficial</a></p></div>
+<div><h3>الإعلانات</h3><nav><a href="../ar/index.html">الرئيسية</a><a href="../ar/listings.html">الإعلانات</a><a href="../ar/sell.html">البيع والطلب</a><a href="../ar/dealers.html">الوسطاء</a><a href="../ar/calculator.html">الحاسبة</a><a href="../ar/about.html">من نحن</a><a href="../ar/stories.html">التوعية</a><a href="../ar/contact.html">اتصل بنا</a></nav></div>
+<div><h3>ابقَ على اطلاع بشؤون عقارك ف…</h3><p>BBB — Bhimber Business Bureau منصة محلية متخصصة في بيع وشراء العقارات في منطقة بهيمبر، آزاد كشمير. نعمل على تسهيل الوصول إلى معلومات العقارات، وربط المشترين بالبائعين وال…</p></div>
+</div>
+<p class="disc">الأسعار وحالة توفر العقارات المعروضة على هذه المنصة إرشادية وقابلة للتغيير. يجب على المشتري التحقق بنفسه من الملكية والسندات وسجلات الأراضي والمستندات ذات الصلة وأي قيود أو نزاعات محتملة، وذلك لدى دائرة الإيرادات والجهات الحكومية المختصة، قبل إتمام أي معاملة. تشير مستويات التحقق المعروضة إلى الإجراءات التي تم تسجيلها لكل إعلان، ولا تشكل ضماناً قانونياً للملكية أو صحة السندات. المعلومات المنشورة على المنصة مقدمة لأغراض التوجيه العام فقط، ولا تُعد استشارة قانونية.</p>
+<p class="sign">مكتب بهيمبر للأعمال — واتساب: 0317-9222029</p>
+</div></footer>
+<a class="wa-fab" href="https://wa.me/923179222029" target="_blank" rel="noopener">💬 WhatsApp</a>
+<script src="../assets/calc.js"></script><script src="../assets/site.js"></script></body></html>

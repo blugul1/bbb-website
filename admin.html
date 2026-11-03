@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ایڈمن — BBB | Bhimber Business Bureau</title>
+<meta name="description" content="بی بی بی — بھمبر بزنس بیورو، ضلع بھمبر میں جائیداد خریدنے، فروخت کرنے والوں اور پراپرٹی ڈیلرز کو ایک پلیٹ فارم پر لانے کی کوشش ہے، جہاں ہر لسٹنگ کے سا">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Amiri:wght@400;700&family=Cairo:wght@400;700;800&display=swap" rel="stylesheet"><link rel="icon" href="assets/img/logo.png"><link rel="stylesheet" href="assets/site.css"></head>
+<body data-sell-url="sell.html"><div class="aura"></div><canvas id="dust"></canvas>
+<header class="site"><div class="container hd-in">
+<a class="brand" href="index.html"><img src="assets/img/logo.png" alt="BBB"><span><b>BBB</b><small>بھمبر بزنس بیورو</small></span></a>
+<nav class="main"><a href="index.html" class="">ہوم</a><a href="listings.html" class="">لسٹنگز</a><a href="sell.html" class="">فروخت و مانگ</a><a href="dealers.html" class="">ڈیلرز</a><a href="calculator.html" class="">کیلکولیٹر</a><a href="about.html" class="">ہمارے بارے میں</a><a href="stories.html" class="">آگاہی</a><a href="contact.html" class="cur">رابطہ</a></nav><div class="langs"><a href="contact.html" class="cur">اردو</a><a href="en/contact.html" class="">EN</a><a href="ar/contact.html" class="">عربي</a></div>
+<button class="burger" aria-label="menu">☰</button></div></header>
+<main><div class="phead container"><div class="kicker">BBB · ADMIN</div><h1>ایڈمن — منظوری پینل</h1>
+<p>یہ صفحہ صرف BBB ٹیم کے لیے ہے۔ پہلی بار اپنا PIN مقرر کریں، بعد میں اسی PIN سے کھلے گا۔ اس آلے پر جمع شدہ اندراج یہاں نظر آئیں گے۔ واٹس ایپ پر آئے اندراج کی فون تصدیق کے بعد یا تو صارف کے آلے پر یہی پینل کھول کر منظور کریں، یا اندراج ٹیم کے اپنے آلے پر فارم سے درج کر کے یہاں سے منظور کریں۔ منظور شدہ ڈیٹا باقاعدگی سے Export کر کے محفوظ رکھیں — یہی فائل سائٹ کے مستقل ڈیٹا کی بنیاد ہے۔</p></div>
+<section class="blk container"><div class="glass" style="padding:22px">
+<div id="admin-lock"><label class="fl">PIN</label><input id="admin-pin" type="password" inputmode="numeric" style="max-width:220px">
+<button class="btn btn-gold" onclick="adminUnlock()">کھولیں</button><p id="admin-lock-msg" class="form-msg"></p></div>
+<div id="admin-main" style="display:none">
+<label class="fl">لسٹنگ منظوری پر جانچ کا درجہ (صرف وہی جو اصل میں ہوا ہو)</label>
+<select id="appr-verify" style="max-width:340px"><option value="0">جانچ جاری — صرف فون تصدیق</option><option value="1">دستاویزات دیکھے گئے</option><option value="2">موقع دیکھا گیا</option><option value="3">دونوں مکمل</option></select>
+<p id="admin-msg" class="form-msg"></p><div id="admin-lists"></div>
+<div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap">
+<button class="btn btn-detail" onclick="adminExport()">⬇ منظور شدہ ڈیٹا Export (JSON)</button>
+<label class="btn btn-detail" style="cursor:pointer">⬆ ڈیٹا Import<input type="file" accept=".json" style="display:none" onchange="adminImport(event)"></label>
+</div></div></div></section>
+<script>
+function adminUnlock(){
+  var pin=document.getElementById("admin-pin").value.trim(); if(!pin) return;
+  var saved=localStorage.getItem("bbb_admin_pin");
+  if(!saved){ localStorage.setItem("bbb_admin_pin", pin); }
+  else if(saved!==pin){ document.getElementById("admin-lock-msg").textContent="PIN درست نہیں۔"; return; }
+  document.getElementById("admin-lock").style.display="none";
+  document.getElementById("admin-main").style.display="block";
+  adminRender();
+}
+</script></main>
+<footer class="site"><div class="container">
+<div class="ft">
+<div><h3>BBB — Bhimber Business Bureau</h3><p>بھمبر میں جائیداد کے معاملات کے لیے آپ کا مقامی رابطہ۔</p><p style="margin-top:6px">علاقہ کار: بھمبر | برنالہ | سماہنی | ضلع بھمبر، آزاد کشمیر</p>
+<p style="margin-top:8px">WhatsApp: <a class="en" href="https://wa.me/923179222029" target="_blank" rel="noopener">0317-9222029</a><br>Facebook: <a href="https://www.facebook.com/bhimberbusinessofficial" target="_blank" rel="noopener">@bhimberbusinessofficial</a></p></div>
+<div><h3>لسٹنگز</h3><nav><a href="index.html">ہوم</a><a href="listings.html">لسٹنگز</a><a href="sell.html">فروخت و مانگ</a><a href="dealers.html">ڈیلرز</a><a href="calculator.html">کیلکولیٹر</a><a href="about.html">ہمارے بارے میں</a><a href="stories.html">آگاہی</a><a href="contact.html">رابطہ</a></nav></div>
+<div><h3>اپنے علاقے میں جائیداد کا مع…</h3><p>بی بی بی — بھمبر بزنس بیورو آزاد کشمیر کے ضلع بھمبر میں جائیداد کی خرید و فروخت کے لیے ایک مقامی پلیٹ فارم ہے۔ ہمارا مقصد خریداروں، فروخت کنندگان اور پراپرٹی ڈیلرز کو ایک…</p></div>
+</div>
+<p class="disc">ویب سائٹ پر درج جائیدادوں کی قیمتیں اور دستیابی صرف ابتدائی رہنمائی کے لیے ہیں۔ ان میں تبدیلی ممکن ہے۔ کسی بھی خریداری سے پہلے خریدار خود متعلقہ محکمہ مال اور دیگر مجاز سرکاری اداروں سے ملکیت، انتقالات، ریونیو ریکارڈ، دستاویزات، ممکنہ پابندیوں اور تنازعات کی تصدیق ضرور کرے۔ لسٹنگ کے ساتھ درج تصدیقی حیثیت صرف بی بی بی کی جانب سے مکمل کیے گئے جانچ کے مراحل کو ظاہر کرتی ہے، قانونی ملکیت کی ضمانت نہیں دیتی۔ ویب سائٹ پر فراہم کردہ معلومات عمومی رہنمائی کے لیے ہیں، قانونی مشورہ نہیں۔</p>
+<p class="sign">بھمبر بزنس بیورو — رابطہ: 0317-9222029</p>
+</div></footer>
+<a class="wa-fab" href="https://wa.me/923179222029" target="_blank" rel="noopener">💬 WhatsApp</a>
+<script>window.BBB_MSG={wa:"السلام علیکم، مجھے BBB لسٹنگ {id} ({title}) میں دلچسپی ہے۔ براہ کرم تفصیل اور قیمت سے آگاہ کریں۔"};</script><script src="assets/data-ur.js"></script><script src="assets/geo.js"></script><script src="assets/engine.js"></script><script src="assets/exp.js"></script><script src="assets/site.js"></script></body></html>

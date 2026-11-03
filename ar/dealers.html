@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الوسطاء — BBB | Bhimber Business Bureau</title>
+<meta name="description" content="مكتب بهيمبر للأعمال العقارية (BBB) منصة محلية تجمع بين الراغبين في شراء العقارات وبيعها والوسطاء العقاريين في منطقة بهيمبر، مع عرض واضح لمعلومات كل عق">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Amiri:wght@400;700&family=Cairo:wght@400;700;800&display=swap" rel="stylesheet"><link rel="icon" href="../assets/img/logo.png"><link rel="stylesheet" href="../assets/site.css"></head>
+<body data-sell-url="../ar/sell.html"><div class="aura"></div><canvas id="dust"></canvas>
+<header class="site"><div class="container hd-in">
+<a class="brand" href="../ar/index.html"><img src="../assets/img/logo.png" alt="BBB"><span><b>BBB</b><small>Bhimber Business Bureau</small></span></a>
+<nav class="main"><a href="../ar/index.html" class="">الرئيسية</a><a href="../ar/listings.html" class="">الإعلانات</a><a href="../ar/sell.html" class="">البيع والطلب</a><a href="../ar/dealers.html" class="cur">الوسطاء</a><a href="../ar/calculator.html" class="">الحاسبة</a><a href="../ar/about.html" class="">من نحن</a><a href="../ar/stories.html" class="">التوعية</a><a href="../ar/contact.html" class="">اتصل بنا</a></nav><div class="langs"><a href="../dealers.html" class="">اردو</a><a href="../en/dealers.html" class="">EN</a><a href="../ar/dealers.html" class="cur">عربي</a></div>
+<button class="burger" aria-label="menu">☰</button></div></header>
+<main><div class="phead container"><div class="kicker hero-up">BBB · BHIMBER BUSINESS BUREAU</div><h1 class="hero-up d1">الوسطاء</h1><p class="hero-up d2">أنشئ حساب وسيط وتصفّح دليل وسطاء BBB.</p></div><div class="container"><p class="note rv" style="margin:6px 0 4px">نماذج العمل في هذا الموقع بالأردية، وهي لغة عمل فريقنا. للمساعدة بالعربية، راسلنا عبر واتساب.</p></div><section id="dealers">
+  <div class="container">
+    <div class="sec-head"><div><div class="kicker">DEALERS · ڈیلر اکاؤنٹ</div><h2>الوسطاء</h2></div></div>
+    <p class="sub">ڈیلر کو ملے گا: اپنا عوامی صفحہ، لسٹنگز کا انتظام، ہر انکوائری کی گنتی (لیڈز)، 7 دن کی تازگی گھڑی اور مانگ ملانا۔ اکاؤنٹ بنانا مفت ہے (لانچ آفر — شرائط کا فیصلہ BBB کا)۔ تصدیق کے لیے BBB دفتر/ایجنسی اور 2 حوالے چیک کرے گا؛ CNIC کبھی عوامی نہیں ہوگا۔</p>
+    <div class="form-card">
+      <form onsubmit="registerDealer(event)">
+        <div class="form-grid">
+          <div><label>آپ کا نام *</label><input id="D-name" type="text" placeholder="نام"></div>
+          <div><label>موبائل / WhatsApp *</label><input id="D-mobile" type="tel" placeholder="03XX-XXXXXXX" class="en" style="direction:ltr;text-align:right"></div>
+          <div><label>ایجنسی / دفتر کا نام</label><input id="D-agency" type="text" placeholder="مثلاً: چوہدری پراپرٹی سنٹر"></div>
+          <div><label>دفتر کا علاقہ *</label><select id="D-tehsil"><option value="bhimber">بھمبر</option><option value="barnala">برنالہ</option><option value="samahni">سماہنی</option></select></div>
+          <div class="full"><label>کن علاقوں میں کام کرتے ہیں؟ *</label><input id="D-areas" type="text" placeholder="مثلاً: چریاں، سیرلہ، بلدیہ حدود"></div>
+          <div><label>تجربہ (سال)</label><input id="D-exp" type="number" min="0" placeholder="مثلاً: 5"></div>
+        </div>
+        <button class="btn btn-wa" type="submit" style="width:100%;margin-top:14px">ڈیلر اکاؤنٹ بنائیں</button>
+        <p class="field-note" id="dealer-msg" style="margin-top:8px"></p>
+      </form>
+    </div>
+    <div class="dash" id="dealer-dash">
+      <h3>📊 میرا ڈیش بورڈ — <span id="dash-name"></span></h3>
+      <div class="dash-stats">
+        <div><b id="dash-listings">0</b><span>میری لسٹنگز</span></div>
+        <div><b id="dash-leads">0</b><span>لیڈز (WhatsApp کلکس)</span></div>
+        <div><b id="dash-wanted">0</b><span>میری مانگیں</span></div>
+        <div><b id="dash-fresh">—</b><span>تازہ ترین لسٹنگ کی تازگی</span></div>
+      </div>
+      <p class="field-note">تازگی کا اصول: ہر لسٹنگ 7 دن تازہ رہتی ہے — پھر خود چھپ جاتی ہے، جب تک آپ اسے دوبارہ تصدیق نہ کریں۔ یہی اصول خریدار کا اعتماد بناتا ہے۔</p>
+    </div>
+    <div class="dealer-grid" id="dealer-grid"></div>
+  </div>
+</section>
+
+<section class="blk container"><div class="sec-head rv"><h2>دليل المقاولين — البناء</h2></div><div id="contractor-grid" class="grid"></div></section>
+<section class="blk container"><div class="sec-head rv"><h2>مطلوب بناء — الاحتياجات المعتمدة</h2></div><div id="cneed-grid" class="grid"></div></section></main>
+<footer class="site"><div class="container">
+<div class="ft">
+<div><h3>BBB — Bhimber Business Bureau</h3><p>وجهتك المحلية للتواصل العقاري في بهمبر.</p><p style="margin-top:6px">نطاق العمل: بهيمبر | برناله | سماهني | مقاطعة بهيمبر، آزاد كشمير</p>
+<p style="margin-top:8px">WhatsApp: <a class="en" href="https://wa.me/923179222029" target="_blank" rel="noopener">0317-9222029</a><br>Facebook: <a href="https://www.facebook.com/bhimberbusinessofficial" target="_blank" rel="noopener">@bhimberbusinessofficial</a></p></div>
+<div><h3>الإعلانات</h3><nav><a href="../ar/index.html">الرئيسية</a><a href="../ar/listings.html">الإعلانات</a><a href="../ar/sell.html">البيع والطلب</a><a href="../ar/dealers.html">الوسطاء</a><a href="../ar/calculator.html">الحاسبة</a><a href="../ar/about.html">من نحن</a><a href="../ar/stories.html">التوعية</a><a href="../ar/contact.html">اتصل بنا</a></nav></div>
+<div><h3>ابقَ على اطلاع بشؤون عقارك ف…</h3><p>BBB — Bhimber Business Bureau منصة محلية متخصصة في بيع وشراء العقارات في منطقة بهيمبر، آزاد كشمير. نعمل على تسهيل الوصول إلى معلومات العقارات، وربط المشترين بالبائعين وال…</p></div>
+</div>
+<p class="disc">الأسعار وحالة توفر العقارات المعروضة على هذه المنصة إرشادية وقابلة للتغيير. يجب على المشتري التحقق بنفسه من الملكية والسندات وسجلات الأراضي والمستندات ذات الصلة وأي قيود أو نزاعات محتملة، وذلك لدى دائرة الإيرادات والجهات الحكومية المختصة، قبل إتمام أي معاملة. تشير مستويات التحقق المعروضة إلى الإجراءات التي تم تسجيلها لكل إعلان، ولا تشكل ضماناً قانونياً للملكية أو صحة السندات. المعلومات المنشورة على المنصة مقدمة لأغراض التوجيه العام فقط، ولا تُعد استشارة قانونية.</p>
+<p class="sign">مكتب بهيمبر للأعمال — واتساب: 0317-9222029</p>
+</div></footer>
+<a class="wa-fab" href="https://wa.me/923179222029" target="_blank" rel="noopener">💬 WhatsApp</a>
+<script>window.BBB_MSG={wa:"مرحباً، أنا مهتم بإعلان BBB رقم {id} ({title}). أرجو تزويدي بالتفاصيل والسعر."};</script><script src="../assets/data-ar.js"></script><script src="../assets/geo.js"></script><script src="../assets/engine.js"></script><script src="../assets/exp.js"></script><script src="../assets/site.js"></script></body></html>

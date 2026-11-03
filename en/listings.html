@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listings — BBB | Bhimber Business Bureau</title>
+<meta name="description" content="BBB — Bhimber Business Bureau brings property buyers, sellers and dealers together across District Bhimber, with clear listing information and a visib">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Amiri:wght@400;700&family=Cairo:wght@400;700;800&display=swap" rel="stylesheet"><link rel="icon" href="../assets/img/logo.png"><link rel="stylesheet" href="../assets/site.css"></head>
+<body data-sell-url="../en/sell.html"><div class="aura"></div><canvas id="dust"></canvas>
+<header class="site"><div class="container hd-in">
+<a class="brand" href="../en/index.html"><img src="../assets/img/logo.png" alt="BBB"><span><b>BBB</b><small>Bhimber Business Bureau</small></span></a>
+<nav class="main"><a href="../en/index.html" class="">Home</a><a href="../en/listings.html" class="cur">Listings</a><a href="../en/sell.html" class="">Sell & Wanted</a><a href="../en/dealers.html" class="">Dealers</a><a href="../en/calculator.html" class="">Calculator</a><a href="../en/about.html" class="">About Us</a><a href="../en/stories.html" class="">Awareness</a><a href="../en/contact.html" class="">Contact</a></nav><div class="langs"><a href="../listings.html" class="">اردو</a><a href="../en/listings.html" class="cur">EN</a><a href="../ar/listings.html" class="">عربي</a></div>
+<button class="burger" aria-label="menu">☰</button></div></header>
+<main><div class="phead container"><div class="kicker hero-up">BBB · BHIMBER BUSINESS BUREAU</div><h1 class="hero-up d1">Listings</h1><p class="hero-up d2">All current listings — search and filter by type and area.</p></div><div class="container"><p class="note rv" style="margin:6px 0 4px">Working forms on this site are in Urdu, our team's working language. For help in English, message us on WhatsApp.</p></div><section class="blk container" style="padding-top:26px"><section class="blk container"><div class="glass geo-panel rv"><h2>Select Location — District → Tehsil → Village</h2><div id="geo-filter"></div></div></section><div class="psearch">
+  <div class="container">
+    
+    <p class="sub">پلاٹ، مکان، دکان، کمرشل یا زرعی — صرف وہی لسٹنگ جو جانچی گئی ہو۔ پہلے جانچ، پھر سودا۔</p>
+    <div class="mode-tabs">
+      <button id="mode-buy" class="active" onclick="setMode('buy')">🏠 خریدنا ہے</button>
+      <button id="mode-sell" onclick="setMode('sell')">🏷️ بیچنا ہے</button>
+    </div>
+    <div class="search-card glass">
+      <div class="search-grid">
+        <div><label>قسم</label><select id="q-type"><option value="">تمام اقسام</option><option value="plot">پلاٹ</option><option value="house">مکان</option><option value="shop">دکان</option><option value="commercial">کمرشل</option><option value="residential">ریزیڈنشیل</option><option value="agri">زرعی</option></select></div>
+        <div><label>تحصیل</label><select id="q-tehsil"><option value="">تمام تحصیلیں</option><option value="bhimber">بھمبر</option><option value="barnala">برنالہ</option><option value="samahni">سماہنی</option></select></div>
+        <div><label>علاقہ / گاؤں</label><select id="q-area"><option value="">تمام علاقے</option></select></div>
+        <div><label>بجٹ</label><select id="q-budget"><option value="">کوئی حد نہیں</option><option value="low">چھوٹا بجٹ</option><option value="mid">درمیانہ</option><option value="high">بڑا بجٹ</option></select></div>
+        <div class="search-actions"><button class="btn btn-navy" onclick="applyFilters()">تلاش کریں</button></div>
+      </div>
+      <p class="result-count" id="result-count"></p>
+    </div>
+    <p class="trustline">✓ <b>صرف جانچی گئی لسٹنگز</b> &nbsp;·&nbsp; ✓ <b>کوئی جعلی لسٹنگ نہیں</b> &nbsp;·&nbsp; ✓ <b>قیمت ایجاد نہیں ہوتی</b> — مالک کی طلب، صاف لکھی ہوئی</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cats" id="cats">
+    <div class="cat active" data-cat="" onclick="pickCat('',this)"><div class="ic">🏘️</div><b>سب کچھ</b><span>تمام اقسام</span></div>
+    <div class="cat" data-cat="plot" onclick="pickCat('plot',this)"><div class="ic">📐</div><b>پلاٹ</b><span>رہائشی / کمرشل</span></div>
+    <div class="cat" data-cat="house" onclick="pickCat('house',this)"><div class="ic">🏠</div><b>مکان</b><span>گھر، بنگلہ</span></div>
+    <div class="cat" data-cat="shop" onclick="pickCat('shop',this)"><div class="ic">🏪</div><b>دکان</b><span>بازار، مین روڈ</span></div>
+    <div class="cat" data-cat="commercial" onclick="pickCat('commercial',this)"><div class="ic">🏢</div><b>کمرشل</b><span>دفتر، پلازہ، ہال</span></div>
+    <div class="cat" data-cat="agri" onclick="pickCat('agri',this)"><div class="ic">🌾</div><b>زرعی</b><span>زمین، باغ، فارم</span></div>
+  </div>
+</div>
+
+</section><section id="listings">
+  <div class="container">
+    <div class="sec-head"><div><div class="kicker">LISTINGS · خرید و فروخت</div><h2>Listings</h2></div><span class="count" id="list-count"></span></div>
+    <p class="sub">ہر لسٹنگ پر اس کی جانچ کا درجہ لکھا ہے۔ "زیرِ جانچ" والی لسٹنگ ڈیلر/مالک کی جمع شدہ ہے — BBB کی جانچ مکمل ہوتے ہی اس کا درجہ یہیں بدل جائے گا۔</p>
+    <div class="grid" id="listing-grid"></div>
+    <div class="empty" id="empty-state" style="display:none">
+      <h3 style="color:var(--navy)">اس تلاش میں فی الحال کوئی لسٹنگ نہیں</h3>
+      <p>جعلی لسٹنگ دکھانے سے بہتر ہے خالی نتیجہ۔ اپنی مانگ نیچے درج کر دیں — ملتی لسٹنگ آتے ہی اطلاع ملے گی۔</p>
+      <p style="margin-top:10px"><a class="btn btn-wa" href="#wanted">اپنی مانگ درج کریں</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="modal-bg" id="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal" id="modal"></div></div>
+
+</main>
+<footer class="site"><div class="container">
+<div class="ft">
+<div><h3>BBB — Bhimber Business Bureau</h3><p>Your Local Connection to Property in Bhimber.</p><p style="margin-top:6px">Coverage: Bhimber | Barnala | Samahni | District Bhimber, AJK</p>
+<p style="margin-top:8px">WhatsApp: <a class="en" href="https://wa.me/923179222029" target="_blank" rel="noopener">0317-9222029</a><br>Facebook: <a href="https://www.facebook.com/bhimberbusinessofficial" target="_blank" rel="noopener">@bhimberbusinessofficial</a></p></div>
+<div><h3>Listings</h3><nav><a href="../en/index.html">Home</a><a href="../en/listings.html">Listings</a><a href="../en/sell.html">Sell & Wanted</a><a href="../en/dealers.html">Dealers</a><a href="../en/calculator.html">Calculator</a><a href="../en/about.html">About Us</a><a href="../en/stories.html">Awareness</a><a href="../en/contact.html">Contact</a></nav></div>
+<div><h3>Property Matters Back Home —…</h3><p>BBB — Bhimber Business Bureau is a property sale and purchase platform serving District Bhimber, Azad Kashmir. We help people explore property opportunities, connect with…</p></div>
+</div>
+<p class="disc">Property prices and availability displayed on this platform are indicative and may change without notice. Buyers should independently verify ownership, title, revenue records, relevant documents and any applicable restrictions or disputes with the relevant revenue department and authorities before entering into a transaction. Verification labels describe the checks recorded against a listing and do not constitute a legal guarantee of ownership or title. BBB's information is provided for general guidance only and does not constitute legal advice.</p>
+<p class="sign">Bhimber Business Bureau — Contact: 0317-9222029</p>
+</div></footer>
+<a class="wa-fab" href="https://wa.me/923179222029" target="_blank" rel="noopener">💬 WhatsApp</a>
+<script>window.BBB_MSG={wa:"Hello, I am interested in BBB listing {id} ({title}). Please share the details and price."};</script><script src="../assets/data-en.js"></script><script src="../assets/geo.js"></script><script src="../assets/engine.js"></script><script src="../assets/exp.js"></script><script src="../assets/site.js"></script></body></html>
