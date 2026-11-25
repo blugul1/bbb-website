@@ -173,11 +173,8 @@ tailwind.config = {
   input[type=range].g-range{width:100%;accent-color:#0B3D2E}
   .g-kpi{background:#fff;border:1px solid #E3DCC8;border-radius:1rem;padding:1rem}
   @media print{ #ghar .no-print{display:none !important} }
-  /* ── Booking / Ledger / Products ── */
-  .warnbox{background:#FFF6DB;border:1.5px solid #C9A227;border-radius:1rem;padding:1rem 1.15rem;color:#5C4A00}
-  .ld-tab{border:2px solid #E3DCC8;background:#fff;color:#0B3D2E;font-weight:600;padding:.55rem 1.1rem;border-radius:999px;cursor:pointer}
-  .ld-tab.on{background:#0B3D2E;color:#F8F5EF;border-color:#0B3D2E}
-  .ld-entry{border:1px solid #E3DCC8;border-radius:1rem;padding:1rem 1.1rem;background:#fff}
+  /* ── Booking / Products ── */
+  .entry-card{border:1px solid #E3DCC8;border-radius:1rem;padding:1rem 1.1rem;background:#fff}
   .pd-card{background:#fff;border:1px solid #E3DCC8;border-radius:1.25rem;padding:1.25rem;box-shadow:0 10px 30px -12px rgba(11,61,46,.14);display:flex;flex-direction:column}
   .pd-meta{font-size:13.5px;color:#3D3A33}
   .pd-meta b{color:#0B3D2E}
@@ -203,7 +200,7 @@ tailwind.config = {
   .lst-photo img{height:212px}
   .pd-card{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s}
   .pd-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -12px rgba(11,61,46,.18)}
-  @media print{ #ledger .no-print,#booking .no-print,#products .no-print{display:none !important} }
+  @media print{ #booking .no-print,#products .no-print{display:none !important} }
   /* ── Quick actions (3 big buttons) + easy forms (v13) ── */
   .bigbtn{display:flex;align-items:center;justify-content:center;gap:.65rem;min-height:88px;padding:1.15rem 1.25rem;border-radius:1.25rem;font-weight:700;font-size:1.3rem;line-height:1.6;text-align:center;box-shadow:0 10px 30px -12px rgba(11,61,46,.28);transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s,background .25s}
   .bigbtn:hover{transform:translateY(-3px);box-shadow:0 22px 40px -12px rgba(11,61,46,.32)}
@@ -256,7 +253,6 @@ tailwind.config = {
       <a class="navlink" href="#properties" data-i18n="nav.props">Properties</a>
       <a class="navlink" href="#ghar" data-i18n="nav.ghar">Build a Home</a>
       <a class="navlink" href="#booking" data-i18n="nav.booking">Booking</a>
-      <a class="navlink" href="#ledger" data-i18n="nav.ledger">My Work Account</a>
       <a class="navlink" href="#products" data-i18n="nav.products">Digital Products</a>
       <a class="navlink" href="#services" data-i18n="nav.services">Services</a>
       <a class="navlink" href="#elevations" data-i18n="nav.elev">Elevations</a>
@@ -285,7 +281,6 @@ tailwind.config = {
     <a href="#properties" data-i18n="nav.props">Properties</a>
     <a href="#ghar" data-i18n="nav.ghar">Build a Home</a>
     <a href="#booking" data-i18n="nav.booking">Booking</a>
-    <a href="#ledger" data-i18n="nav.ledger">My Work Account</a>
     <a href="#products" data-i18n="nav.products">Digital Products</a>
     <a href="#submit" data-i18n="nav.sell">List Property</a>
     <a href="#wanted" data-i18n="nav.wanted">Wanted</a>
@@ -310,7 +305,6 @@ tailwind.config = {
       <a class="drawer-link py-3 border-b border-linec/70" href="#properties" data-i18n="nav.props">Properties</a>
       <a class="drawer-link py-3 border-b border-linec/70" href="#ghar" data-i18n="nav.ghar">Build a Home</a>
       <a class="drawer-link py-3 border-b border-linec/70" href="#booking" data-i18n="nav.booking">Booking</a>
-      <a class="drawer-link py-3 border-b border-linec/70" href="#ledger" data-i18n="nav.ledger">My Work Account</a>
       <a class="drawer-link py-3 border-b border-linec/70" href="#products" data-i18n="nav.products">Digital Products</a>
       <a class="drawer-link py-3 border-b border-linec/70" href="#submit" data-i18n="nav.sell">List Property</a>
       <a class="drawer-link py-3 border-b border-linec/70" href="#wanted" data-i18n="nav.wanted">Wanted</a>
@@ -418,7 +412,6 @@ tailwind.config = {
     <a class="toc-chip" href="#ghar"><span data-i18n="nav.ghar">Build a Home</span> <span class="toc-badge"><bdi dir="ltr" class="num">12</bdi> <span data-i18n="toc.stages">stages</span> · <bdi dir="ltr" class="num">30</bdi> <span data-i18n="toc.questions">questions</span></span></a>
     <a class="toc-chip" href="#calculator"><span data-i18n="nav.calc">Calculator</span></a>
     <a class="toc-chip" href="#booking"><span data-i18n="nav.booking">Booking</span></a>
-    <a class="toc-chip" href="#ledger"><span data-i18n="nav.ledger">My Work Account</span></a>
     <a class="toc-chip" href="#products"><span data-i18n="nav.products">Digital Products</span> <span class="toc-badge"><bdi dir="ltr" class="num">10</bdi> <span data-i18n="toc.free">free</span></span></a>
     <a class="toc-chip" href="#services"><span data-i18n="nav.services">Services</span> <span class="toc-badge"><bdi dir="ltr" class="num" id="tocServices">11</bdi> <span data-i18n="toc.services">services</span></span></a>
     <a class="toc-chip" href="#elevations"><span data-i18n="nav.elev">Elevations</span></a>
@@ -822,7 +815,7 @@ tailwind.config = {
         <div><p class="font-pop font-semibold text-deep" data-i18n="g.dDocs">Documents checklist</p><div id="gDocList" class="mt-1"></div></div>
         <div><p class="font-pop font-semibold text-deep" data-i18n="g.dPhotos">Stage photos</p><p class="text-inksoft text-[14.5px] mt-1" data-i18n="g.dPhotosP">Keep one dated photo set per stage (foundation, each slab, plaster, finishing). Send them to BBB on WhatsApp — overseas builders get a photo report at every stage.</p>
         <a id="gDashWa" href="https://wa.me/923179222029" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-deep text-cream font-semibold px-5 py-3 rounded-full text-[14.5px] mt-3 no-print"><span data-i18n="g.dExport">Export my build on WhatsApp</span> <span class="cta-arrow">→</span></a>
-        <p class="mt-3 no-print"><a href="#booking" class="font-semibold text-deep underline decoration-gold decoration-2 underline-offset-4" data-i18n="bk.myH">My Requests</a> · <a href="#ledger" class="font-semibold text-deep underline decoration-gold decoration-2 underline-offset-4" data-i18n="nav.ledger">My Work Account</a></p></div>
+        <p class="mt-3 no-print"><a href="#booking" class="font-semibold text-deep underline decoration-gold decoration-2 underline-offset-4" data-i18n="bk.myH">My Requests</a></p></div>
       </div>
     </div>
 
@@ -892,99 +885,6 @@ tailwind.config = {
         <p class="text-inksoft text-[15px] mt-1" data-i18n="bk.mySub">Saved in this browser only — they do not appear on another phone or in the BBB office by themselves. Update the status yourself when the team confirms; the site never marks a meeting confirmed on its own.</p>
         <div id="bk-list" class="mt-3"></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ MY LEDGER ══════════ -->
-<section id="ledger" class="bg-sand/60 py-16 lg:py-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="reveal max-w-3xl">
-      <p class="font-pop font-semibold tracking-[.16em] text-xs uppercase" style="color:#8a6d14" data-i18n="ld.kicker">My Work Account · Payment Record</p>
-      <h2 class="font-pop font-bold text-deep text-3xl sm:text-4xl mt-2" data-i18n="ld.h">My Work Account — Your Own Payment Record</h2>
-      <p class="urdu text-deep text-2xl mt-1" dir="rtl" lang="ur">آپ کی اقساط اور تعمیراتی ادائیگیاں — آپ کا اپنا حساب</p>
-    </div>
-    <div class="reveal warnbox mt-6" role="note">
-      <p class="font-semibold" data-i18n="ld.warn">This dashboard is only for your personal record and reminders. The BBB website does not receive, transfer, hold or guarantee any payment. Do not treat a self-entered payment as a verified payment.</p>
-    </div>
-
-    <div class="flex gap-2 flex-wrap mt-7 no-print">
-      <button type="button" class="ld-tab on" id="ld-tab-plot" onclick="ledgerTab('plot')" data-i18n="ld.tabPlot">Plot instalments</button>
-      <button type="button" class="ld-tab" id="ld-tab-build" onclick="ledgerTab('build')" data-i18n="ld.tabBuild">Construction payments</button>
-    </div>
-
-    <div id="ld-empty" class="reveal bg-white rounded-2xl ring-1 ring-linec shadow-card p-8 text-center mt-5">
-      <p class="font-pop font-semibold text-deep text-lg" data-i18n="ld.emptyH">Your ledger is empty</p>
-      <p class="text-inksoft mt-1.5" data-i18n="ld.empty">No sample figures, nothing invented. Add your first project below to begin — every number here will be one you typed yourself, from your own documents.</p>
-    </div>
-
-    <div id="ld-main" class="hidden">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 mt-5">
-        <div class="g-kpi"><p class="text-[13px] font-semibold text-inksoft" data-i18n="ld.tTotal">Agreement total</p><p class="font-pop font-bold text-deep text-xl num" dir="ltr" id="ld-sum-total">—</p></div>
-        <div class="g-kpi"><p class="text-[13px] font-semibold text-inksoft" data-i18n="ld.tPaidSelf">Paid — self-entered</p><p class="font-pop font-bold text-deep text-xl num" dir="ltr" id="ld-sum-self">—</p></div>
-        <div class="g-kpi"><p class="text-[13px] font-semibold text-inksoft" data-i18n="ld.tPaidTeam">Paid — team-confirmed</p><p class="font-pop font-bold text-deep text-xl num" dir="ltr" id="ld-sum-team">—</p></div>
-        <div class="g-kpi"><p class="text-[13px] font-semibold text-inksoft" data-i18n="ld.tBalance">Calculated balance</p><p class="font-pop font-bold text-deep text-xl num" dir="ltr" id="ld-sum-bal">—</p></div>
-        <div class="g-kpi"><p class="text-[13px] font-semibold text-inksoft" data-i18n="ld.tNext">Next due date</p><p class="font-pop font-bold text-deep text-xl num" dir="ltr" id="ld-sum-next">—</p><p class="text-[13px]" id="ld-sum-late"></p></div>
-      </div>
-      <div id="ld-entries" class="grid md:grid-cols-2 gap-4 mt-5"></div>
-    </div>
-
-    <div class="grid lg:grid-cols-2 gap-6 mt-6 items-start no-print">
-      <div class="reveal bg-white rounded-2xl shadow-card ring-1 ring-linec p-6">
-        <h3 class="font-pop font-semibold text-deep text-lg" data-i18n="ld.addProjH">Add a project</h3>
-        <label class="fld mt-3"><span data-i18n="ld.fProjName">Plot ID or project name (write it yourself)</span>
-          <input id="ld-proj-name" type="text" data-i18n-ph="ld.projPh" placeholder="e.g. BBB-001 plot, or: My house — Charyan" /></label>
-        <label class="fld mt-3"><span data-i18n="ld.fTotal">Total agreement amount (PKR) — copy it from your own document</span>
-          <input id="ld-proj-total" type="number" min="0" step="1000" class="num" dir="ltr" /></label>
-        <button type="button" class="mt-4 bg-deep text-cream font-semibold px-5 py-3 rounded-full text-[14.5px]" onclick="ledgerAddProject()" data-i18n="ld.addProj">Add project</button>
-        <p class="field-note mt-2" id="ld-proj-msg" aria-live="polite"></p>
-        <div id="ld-projects" class="mt-3"></div>
-      </div>
-
-      <div class="reveal bg-white rounded-2xl shadow-card ring-1 ring-linec p-6">
-        <h3 class="font-pop font-semibold text-deep text-lg" data-i18n="ld.addEntryH">Add a payment record</h3>
-        <div class="grid sm:grid-cols-2 gap-x-4 gap-y-3 mt-3">
-          <label class="fld sm:col-span-2"><span data-i18n="ld.fProject">Project</span><select id="ld-e-proj"></select></label>
-          <label class="fld"><span data-i18n="ld.fDueDate">Due date</span><input id="ld-e-duedate" type="date" class="num" dir="ltr" /></label>
-          <label class="fld"><span data-i18n="ld.fDueAmt">Amount due (PKR)</span><input id="ld-e-dueamt" type="number" min="0" step="500" class="num" dir="ltr" /></label>
-          <label class="fld"><span data-i18n="ld.fPaidAmt">Amount paid (PKR)</span><input id="ld-e-paidamt" type="number" min="0" step="500" class="num" dir="ltr" /></label>
-          <label class="fld"><span data-i18n="ld.fPaidDate">Payment date</span><input id="ld-e-paiddate" type="date" class="num" dir="ltr" /></label>
-          <label class="fld"><span data-i18n="ld.fReceipt">Proof reference (receipt no.)</span><input id="ld-e-receipt" type="text" data-i18n-ph="ld.receiptPh" placeholder="Receipt number — never a CNIC or bank account" /></label>
-          <label class="fld"><span data-i18n="ld.fStatus">Record status</span>
-            <select id="ld-e-status"><option value="self" data-i18n="ld.stSelf">Self-entered</option><option value="verify" data-i18n="ld.stVerify">Verification requested</option><option value="team" data-i18n="ld.stTeam">Team confirmation received</option></select></label>
-          <label class="flex items-start gap-2 text-[14.5px] sm:col-span-2" id="ld-stage-row"><input type="checkbox" id="ld-e-stage" class="w-4 h-4 shrink-0 mt-1" /> <span data-i18n="ld.stageDone">Work / stage complete (checked before paying)</span></label>
-        </div>
-        <button type="button" class="mt-4 bg-deep text-cream font-semibold px-5 py-3 rounded-full text-[14.5px]" onclick="ledgerAddEntry()" data-i18n="ld.addEntry">Add record</button>
-        <p class="field-note mt-2" id="ld-entry-msg" aria-live="polite"></p>
-      </div>
-    </div>
-
-    <div class="reveal bg-white rounded-2xl shadow-card ring-1 ring-linec p-6 mt-6 no-print">
-      <h3 class="font-pop font-semibold text-deep text-lg" data-i18n="ld.expH">Keep your record safe</h3>
-      <p class="text-inksoft text-[15px] mt-1" data-i18n="ld.expP">Your account is saved only in this browser. Press the save button to keep a copy with you — if this browser is cleared, that copy is the only way back.</p>
-      <div class="flex flex-wrap gap-2.5 mt-4">
-        <button type="button" class="bg-gold text-ink font-pop font-semibold px-6 py-3.5 rounded-full text-[15px]" onclick="ledgerExport('txt')" data-i18n="ld.saveBtn">Save my record</button>
-        <button type="button" class="border border-deep/30 text-deep font-semibold px-5 py-3 rounded-full text-[14.5px]" onclick="ledgerWaSummary()" data-i18n="ld.waSummary">Share ledger summary on WhatsApp</button>
-      </div>
-      <details class="more-link mt-4" id="ld-more-details">
-        <summary class="font-semibold text-deep text-[14.5px] underline decoration-gold decoration-2 underline-offset-4" onclick="toggleLedgerMore(event)" data-i18n="ld.more">More options</summary>
-        <div id="ld-more-body" hidden>
-        <p class="field-note mt-2" data-i18n="ld.moreNote">For computer use: the same record as a file that opens in a spreadsheet, or a saved copy you can bring back later. Most people never need these.</p>
-        <div class="flex flex-wrap gap-2.5 mt-3">
-          <button type="button" class="border border-deep/30 text-deep font-semibold px-5 py-3 rounded-full text-[14.5px]" onclick="ledgerExport('json')" data-i18n="ld.dlJson">Download JSON</button>
-          <button type="button" class="border border-deep/30 text-deep font-semibold px-5 py-3 rounded-full text-[14.5px]" onclick="ledgerExport('csv')" data-i18n="ld.dlCsv">Download CSV</button>
-          <label class="border border-deep/30 text-deep font-semibold px-5 py-3 rounded-full text-[14.5px] cursor-pointer inline-flex items-center"><span data-i18n="ld.importBtn">Import a ledger file</span><input id="ld-import-file" type="file" accept=".json,application/json" class="hidden" onchange="ledgerImportPick(this)" /></label>
-        </div>
-        <div id="ld-import-box" class="hidden mt-4 bg-cream/70 border border-linec rounded-xl p-4">
-          <p class="text-[15px]" id="ld-import-info"></p>
-          <div class="flex flex-wrap gap-2.5 mt-3">
-            <button type="button" class="btn-mini btn-ok" onclick="ledgerImportApply()" data-i18n="ld.importApply">Replace my ledger with this file</button>
-            <button type="button" class="btn-mini border border-deep/30 text-deep bg-white" onclick="ledgerImportCancel()" data-i18n="ld.importCancel">Cancel</button>
-          </div>
-        </div>
-        </div>
-      </details>
-      <p class="pnote" data-i18n="ld.statusNote">A record you enter yourself is your own note. “Team confirmation received” is still a claim stored in this browser, not an official record — the real proof is BBB’s receipt or confirmation message. Never type a CNIC, bank account or full document scan into this ledger.</p>
     </div>
   </div>
 </section>
@@ -1409,7 +1309,6 @@ tailwind.config = {
         <li><a href="#properties" class="hover:text-goldb" data-i18n="nav.props">Properties</a></li><li><a href="#submit" class="hover:text-goldb" data-i18n="nav.sell">List Property</a></li><li><a href="#wanted" class="hover:text-goldb" data-i18n="nav.wanted">Wanted</a></li><li><a href="#dealers" class="hover:text-goldb" data-i18n="nav.dealers">Dealers</a></li><li><a href="#mine" class="hover:text-goldb" data-i18n="nav.mine">My Submissions</a></li><li><a href="#admin" class="hover:text-goldb" data-i18n="nav.admin">Admin</a></li>
         <li><a href="#ghar" class="hover:text-goldb" data-i18n="nav.ghar">Build a Home</a></li>
         <li><a href="#booking" class="hover:text-goldb" data-i18n="nav.booking">Booking</a></li>
-        <li><a href="#ledger" class="hover:text-goldb" data-i18n="nav.ledger">My Work Account</a></li>
         <li><a href="#products" class="hover:text-goldb" data-i18n="nav.products">Digital Products</a></li>
         <li><a href="#elevations" class="hover:text-goldb" data-i18n="foot.elev">Elevation Gallery</a></li>
         <li><a href="#projects" class="hover:text-goldb" data-i18n="foot.show">Work &amp; Craft Showcase</a></li>
@@ -1593,9 +1492,8 @@ en: {
  'g.leakH':'5 · Where Money Leaks — 12 common traps','g.apprH':'6 · Papers & Approvals','g.apprNote':'Exact steps and fees are confirmed with the local municipality during fieldwork. No guessed fee is printed here.','g.overH':'7 · Building from Overseas','g.overCta':'Talk to BBB from abroad','g.clinicH':'8 · Live Clinics — twice a month','g.clinicP':'Voice Q&A on real cases — bring your stage, your bill, your doubt. Next date is announced on WhatsApp; past sessions are summarised here after each clinic.','g.clinicNext':'Next clinic: date announced on WhatsApp — message us to reserve a seat (max 40 builders per session).',
  'g.dashH':'9 · My Build Dashboard — no login, saved in this browser','g.dashSub':'Progress, budget vs actual, payments and documents in one place. Export anytime on WhatsApp.','g.dProg':'Stage progress','g.dNext':'Next step','g.dBudget':'Budget (PKR)','g.dSpent':'Spent so far (PKR)','g.dDocs':'Documents checklist','g.dPhotos':'Stage photos','g.dPhotosP':'Keep one dated photo set per stage (foundation, each slab, plaster, finishing). Send them to BBB on WhatsApp — overseas builders get a photo report at every stage.','g.dExport':'Export my build on WhatsApp','g.overVar':'over budget by','g.underVar':'remaining',
  'g.dirH':'10 · Local Directory','g.dirP':'Verified contractors, suppliers and engineers — the same trust levels as our plot listings. Nothing appears without BBB approval; the directory opens as fieldwork verifies each name.','g.dirEmpty':'Directory is being verified — ask on WhatsApp for a checked contractor or supplier today.','g.bundleH':'11 · Plot-Buyer Bundle','g.bundleP':'Buy your plot through BBB and the full Ghar pack is free. For everyone else it is PKR 7,500, one time. Free sample for all: this calculator and Stage 1.','g.bundleCta':'Get the pack','g.teamH':'BBB Team Dashboard (this browser)','g.tCalc':'Calculator uses','g.tDl':'Pack downloads','g.tPend':'Pending approvals','g.tLive':'Live listings','g.teamNote':'Honest limit: this site is static with no backend, so team totals across all visitors need a data route — a Google Sheet, WhatsApp-log counts, or a backend later. Counts above are this browser only, plus the live approval queues on this device.','g.honestH':'12 · What BBB Does Not Do — in writing',
- 'nav.booking':'Booking','nav.ledger':'My Work Account','nav.products':'Digital Products',
- 'bk.kicker':'Booking · Requests','bk.h':'Booking & Requests','bk.intro':'One form for three requests: see a plot, meet at the office, or talk on the phone. There are no slots and no instant confirmation here — you send a request, and the BBB team confirms the final date, time and place on WhatsApp.','bk.formH':'Request a visit, meeting or consultation','bk.fType':'What do you want? *','bk.typeVisit':'Plot visit','bk.typeMeet':'Office meeting','bk.typeConsult':'Phone / WhatsApp consultation','bk.fListing':'Listing / project ID (optional)','bk.listingPh':'e.g. BBB-001','bk.fDate':'Preferred date','bk.dateNote':'Tell us your preferred date. The BBB team will confirm the final date and time on WhatsApp.','bk.fTime':'Preferred time','bk.timeMorning':'Morning','bk.timeNoon':'Afternoon','bk.timeEvening':'Evening','bk.fDetails':'Details (optional)','bk.detailsPh':'Anything the team should know…','bk.submit':'Send request on WhatsApp','bk.note':'This is a request, not a confirmation. Opening WhatsApp does not deliver the request — press send there yourself. The team confirms time and place separately. No plot location or owner contact is shown on this public form.','bk.myH':'My Requests','bk.mySub':'Saved in this browser only — they do not appear on another phone or in the BBB office by themselves. Update the status yourself when the team confirms; the site never marks a meeting confirmed on its own.','bk.empty':'No request yet. Fill the form above to make your first request.','bk.ref':'Reference','bk.stDraft':'Request prepared','bk.stSent':'Request sent','bk.stConfirmed':'Meeting confirmed by team','bk.stChanged':'Changed / cancelled','bk.msgRequired':'Please write your name and a valid mobile number (03XXXXXXXXX, 11 digits).','bk.saved':'Request saved — reference {ref}. WhatsApp has opened with your request; press send there yourself. This is a request, not a confirmation.','bk.visitBtn':'Request a plot visit','bk.waText':'Assalam-o-Alaikum, BBB booking request.\nReference: {ref}\nType: {type}\nName: {name}\nMobile: {mobile}\nPlease confirm the final date, time and place on WhatsApp.',
- 'ld.kicker':'My Work Account · Payment Record','ld.h':'My Work Account — Your Own Payment Record','ld.warn':'This dashboard is only for your personal record and reminders. The BBB website does not receive, transfer, hold or guarantee any payment. Do not treat a self-entered payment as a verified payment.','ld.tabPlot':'Plot instalments','ld.tabBuild':'Construction payments','ld.emptyH':'Your account is empty','ld.empty':'No sample figures, nothing invented. Add your first project below to begin — every number here will be one you typed yourself, from your own documents.','ld.addProjH':'Add a project','ld.fProjName':'Plot ID or project name (write it yourself)','ld.projPh':'e.g. BBB-001 plot, or: My house — Charyan','ld.fTotal':'Total agreement amount (PKR) — copy it from your own document','ld.addProj':'Add project','ld.addEntryH':'Add a payment record','ld.fProject':'Project','ld.fDueDate':'Due date','ld.fDueAmt':'Amount due (PKR)','ld.fPaidAmt':'Amount paid (PKR)','ld.fPaidDate':'Payment date','ld.fReceipt':'Proof reference (receipt no.)','ld.receiptPh':'Receipt number — never a CNIC or bank account','ld.fStatus':'Record status','ld.stSelf':'Self-entered','ld.stVerify':'Verification requested','ld.stTeam':'Team confirmation received','ld.stageDone':'Work / stage complete (checked before paying)','ld.addEntry':'Add record','ld.tTotal':'Agreement total','ld.tPaidSelf':'Paid — self-entered','ld.tPaidTeam':'Paid — team-confirmed','ld.tBalance':'Calculated balance','ld.tNext':'Next due date','ld.dup':'Possible duplicate entry','ld.checkReq':'Check required under the agreement — stage not marked complete','ld.daysLate':'{n} days late','ld.sendVerify':'Send for verification','ld.del':'Delete','ld.noProj':'Add a project first — a record needs a project.','ld.projMsg':'Project added. Now add its payment records below.','ld.entryMsg':'Record added.','ld.expH':'Keep your record safe','ld.expP':'Your account is saved only in this browser. Press the save button to keep a copy with you — if this browser is cleared, that copy is the only way back.','ld.saveBtn':'Save my record','ld.more':'More options','ld.moreNote':'For computer use: the same record as a file that opens in a spreadsheet, or a saved copy you can bring back later. Most people never need these.','ld.dlJson':'Download JSON','ld.dlCsv':'Download CSV','ld.dlSummary':'Download summary','ld.waSummary':'Share ledger summary on WhatsApp','ld.importBtn':'Import a ledger file','ld.importApply':'Replace my ledger with this file','ld.importCancel':'Cancel','ld.importInfo':'This file contains: {projs} · {n} payment records. Importing replaces the ledger saved in this browser.','ld.importBad':'That file could not be read as a BBB ledger. Nothing was changed.','ld.statusNote':'A record you enter yourself is your own note. “Team confirmation received” is still a claim stored in this browser, not an official record — the real proof is BBB’s receipt or confirmation message. Never type a CNIC, bank account or full document scan into this ledger.','ld.waVerify':'Assalam-o-Alaikum, please verify this payment record.\nProject: {proj}\nAmount paid: PKR {paid}\nPayment date: {date}\nReceipt reference: {receipt}\nLedger ID: {id}\nI will attach the proof separately in this chat.','ld.waSummaryText':'Assalam-o-Alaikum, my BBB ledger summary ({tab}):\nAgreement total: {total}\nPaid (self-entered): {self}\nPaid (team-confirmed): {team}\nCalculated balance: {bal}\nNext due date: {next}',
+ 'nav.booking':'Booking','nav.products':'Digital Products',
+ 'bk.kicker':'Booking · Requests','bk.h':'Booking & Requests','bk.intro':'One form for three requests: see a plot, meet at the office, or talk on the phone. There are no slots and no instant confirmation here — you send a request, and the BBB team confirms the final date, time and place on WhatsApp.','bk.formH':'Request a visit, meeting or consultation','bk.fType':'What do you want? *','bk.typeVisit':'Plot visit','bk.typeMeet':'Office meeting','bk.typeConsult':'Phone / WhatsApp consultation','bk.fListing':'Listing / project ID (optional)','bk.listingPh':'e.g. BBB-001','bk.fDate':'Preferred date','bk.dateNote':'Tell us your preferred date. The BBB team will confirm the final date and time on WhatsApp.','bk.fTime':'Preferred time','bk.timeMorning':'Morning','bk.timeNoon':'Afternoon','bk.timeEvening':'Evening','bk.fDetails':'Details (optional)','bk.detailsPh':'Anything the team should know…','bk.submit':'Send request on WhatsApp','bk.note':'This is a request, not a confirmation. Opening WhatsApp does not deliver the request — press send there yourself. The team confirms time and place separately. No plot location or owner contact is shown on this public form.','bk.myH':'My Requests','bk.mySub':'Saved in this browser only — they do not appear on another phone or in the BBB office by themselves. Update the status yourself when the team confirms; the site never marks a meeting confirmed on its own.','bk.empty':'No request yet. Fill the form above to make your first request.','bk.ref':'Reference','bk.fStatus':'Record status','bk.stDraft':'Request prepared','bk.stSent':'Request sent','bk.stConfirmed':'Meeting confirmed by team','bk.stChanged':'Changed / cancelled','bk.msgRequired':'Please write your name and a valid mobile number (03XXXXXXXXX, 11 digits).','bk.saved':'Request saved — reference {ref}. WhatsApp has opened with your request; press send there yourself. This is a request, not a confirmation.','bk.visitBtn':'Request a plot visit','bk.waText':'Assalam-o-Alaikum, BBB booking request.\nReference: {ref}\nType: {type}\nName: {name}\nMobile: {mobile}\nPlease confirm the final date, time and place on WhatsApp.',
  'pd.kicker':'Digital Products','pd.h':'Digital Products — Free Downloads & Paid Packs','pd.intro':'Free products give information; paid products help you finish a real job. Free files download straight from this page — no WhatsApp, no payment, no login. Paid files are never hosted on this website: order on WhatsApp, the team checks eligibility and price, tells you how to pay, and sends the file on WhatsApp after confirmation.','pd.freeH':'Free — instant download','pd.paidH':'Paid — order on WhatsApp','pd.what':'What you get','pd.format':'Format','pd.notIncl':'Not included','pd.infoDate':'Information date','pd.price':'Price','pd.delivery':'Delivery','pd.dl':'Download','pd.order':'Order on WhatsApp','pd.free':'Free','pd.contactPrice':'Contact for price','pd.gharPrice':'PKR 7,500 · Free with a BBB plot','pd.instant':'Instant download from this page','pd.waDelivery':'On WhatsApp, after the team confirms eligibility, price and payment','pd.notLegal':'Not legal advice','pd.dateNov':'Nov 2026 — the dated benchmarks shown on this page','pd.dateTools':'Generated from the live tools on this page','pd.waOrder':'Assalam-o-Alaikum, I want to order this BBB digital product: {name}. Please confirm eligibility, price and how to pay. I understand the file is not on the website and delivery is on WhatsApp after confirmation.',
  'svc.avail':'Availability: ask us','svc.send':'What to send us','svc.request':'Request this service',
  'svcLst.view':'View listings','svcLst.hide':'Hide listings','svcLst.h':'Work Listings','svcLst.note':'This is a listing of work types. Contact us for photos and details of real work.','svcLst.price':'Contact for price','svcLst.ask':'Ask about this work','svcLst.other':'Other','svcLst.otherDesc':'Something else in this service? Ask on WhatsApp.','svcLst.img':'Illustrative image','svcLst.wa':'Assalam-o-Alaikum, I want to ask about this work. Service: {service}. Work: {item}. Please share the price and details.',
@@ -1727,9 +1625,8 @@ ur: {
  'g.leakH':'5 · پیسہ ضائع ہونے کی جگہیں — 12 عام جال','g.apprH':'6 · کاغذات اور منظوری','g.apprNote':'درست مراحل اور فیس مقامی بلدیہ سے فیلڈ ورک میں تصدیق ہوگی۔ یہاں کوئی اندازے کی فیس نہیں لکھی گئی۔','g.overH':'7 · بیرون ملک سے بنانا','g.overCta':'باہر سے BBB سے بات کریں','g.clinicH':'8 · لائیو کلینک — مہینے میں 2 بار','g.clinicP':'آواز پر سوال جواب، اصل کیسز پر — اپنا مرحلہ، اپنا بل، اپنا شک لے کر آئیں۔ اگلی تاریخ واٹس ایپ پر بتائی جائے گی؛ ہر کلینک کے بعد خلاصہ یہاں لگے گا۔','g.clinicNext':'اگلا کلینک: تاریخ واٹس ایپ پر — نشست کے لیے پیغام بھیجیں (ہر نشست میں زیادہ سے زیادہ 40 بنانے والے)۔',
  'g.dashH':'9 · میرا گھر ڈیش بورڈ — لاگن نہیں، اسی براؤزر میں محفوظ','g.dashSub':'پیش رفت، بجٹ بمقابلہ اصل خرچ، ادائیگیاں اور کاغذات ایک جگہ۔ واٹس ایپ پر برآمد کسی بھی وقت۔','g.dProg':'مرحلہ پیش رفت','g.dNext':'اگلا قدم','g.dBudget':'بجٹ (روپے)','g.dSpent':'اب تک خرچ (روپے)','g.dDocs':'کاغذات چیک لسٹ','g.dPhotos':'مرحلہ تصاویر','g.dPhotosP':'ہر مرحلے کی تاریخ والی تصاویر کا ایک سیٹ رکھیں (بنیاد، ہر چھت، پلستر، فنشنگ)۔ BBB کو واٹس ایپ پر بھیجیں — بیرون ملک بنانے والوں کو ہر مرحلے پر تصویری رپورٹ ملے گی۔','g.dExport':'میرا گھر واٹس ایپ پر برآمد کریں','g.overVar':'بجٹ سے زائد','g.underVar':'باقی',
  'g.dirH':'10 · مقامی ڈائریکٹری','g.dirP':'تصدیق شدہ ٹھیکیدار، سپلائر اور انجینئر — وہی بھروسے کے درجے جو پلاٹوں پر ہیں۔ بغیر BBB منظوری کچھ عوامی نہیں؛ ہر نام کی فیلڈ تصدیق کے ساتھ ڈائریکٹری کھلے گی۔','g.dirEmpty':'ڈائریکٹری کی تصدیق جاری ہے — آج ہی جانچا ہوا ٹھیکیدار یا سپلائر واٹس ایپ پر پوچھیں۔','g.bundleH':'11 · پلاٹ خریدار بنڈل','g.bundleP':'BBB سے پلاٹ لیں تو مکمل گھر پیک مفت۔ باقی سب کے لیے 7,500 روپے، ایک بار۔ سب کے لیے مفت نمونہ: یہ کیلکولیٹر اور مرحلہ 1۔','g.bundleCta':'پیک لیں','g.teamH':'BBB ٹیم ڈیش بورڈ (یہ براؤزر)','g.tCalc':'کیلکولیٹر استعمال','g.tDl':'پیک ڈاؤن لوڈ','g.tPend':'زیر التوا منظوریاں','g.tLive':'لائیو لسٹنگز','g.teamNote':'ایماندار حد: یہ سائٹ جامد ہے، کوئی بیک اینڈ نہیں، اس لیے تمام زائرین کے ٹیم ٹوٹل کے لیے ڈیٹا کا راستہ چاہیے — گوگل شیٹ، واٹس ایپ لاگ گنتی، یا بعد میں بیک اینڈ۔ اوپر کی گنتی صرف اس براؤزر کی ہے، اسی ڈیوائس کی لائیو منظوری قطاروں کے ساتھ۔','g.honestH':'12 · BBB کیا نہیں کرتا — تحریر میں',
- 'nav.booking':'بکنگ','nav.ledger':'میرے کام کا حساب','nav.products':'ڈیجیٹل پروڈکٹس',
- 'bk.kicker':'بکنگ · درخواستیں','bk.h':'بکنگ اور درخواستیں','bk.intro':'تین درخواستوں کے لیے ایک ہی فارم: پلاٹ دیکھنا، دفتر میں ملاقات، یا فون پر بات۔ یہاں نہ سلاٹ ہیں نہ فوری منظوری — آپ درخواست بھیجتے ہیں، اور حتمی تاریخ، وقت اور جگہ کی تصدیق BBB ٹیم واٹس ایپ پر کرتی ہے۔','bk.formH':'دیکھنے، ملاقات یا مشاورت کی درخواست','bk.fType':'آپ کیا چاہتے ہیں؟ *','bk.typeVisit':'پلاٹ دیکھنا','bk.typeMeet':'دفتر میں ملاقات','bk.typeConsult':'فون یا واٹس ایپ مشاورت','bk.fListing':'لسٹنگ / منصوبے کا نمبر (اختیاری)','bk.listingPh':'مثلاً BBB-001','bk.fDate':'ترجیحی تاریخ','bk.dateNote':'اپنی پسند کی تاریخ بتائیں۔ ملاقات کی حتمی تاریخ اور وقت BBB ٹیم واٹس ایپ پر تصدیق کرے گی۔','bk.fTime':'ترجیحی وقت','bk.timeMorning':'صبح','bk.timeNoon':'دوپہر','bk.timeEvening':'شام','bk.fDetails':'تفصیل (اختیاری)','bk.detailsPh':'جو بات ٹیم کو پہلے سے معلوم ہونی چاہیے…','bk.submit':'درخواست واٹس ایپ پر بھیجیں','bk.note':'یہ درخواست ہے، منظوری نہیں۔ واٹس ایپ کھلنا درخواست کا پہنچ جانا نہیں — پیغام وہاں خود بھیجیں۔ وقت اور جگہ کی تصدیق ٹیم الگ سے کرے گی۔ اس عوامی فارم میں پلاٹ کا اصل مقام یا مالک کا رابطہ ظاہر نہیں ہوتا۔','bk.myH':'میری درخواستیں','bk.mySub':'صرف اسی براؤزر میں محفوظ — دوسرے فون یا BBB دفتر میں خود سے ظاہر نہیں ہوتیں۔ ٹیم کی تصدیق آنے پر حیثیت خود بدلیں؛ سائٹ خود سے کسی ملاقات کو منظور نہیں لکھتی۔','bk.empty':'ابھی کوئی درخواست نہیں۔ پہلی درخواست کے لیے اوپر والا فارم بھریں۔','bk.ref':'حوالہ','bk.stDraft':'درخواست تیار','bk.stSent':'درخواست ارسال','bk.stConfirmed':'ٹیم نے ملاقات منظور کی','bk.stChanged':'تبدیلی یا منسوخی','bk.msgRequired':'براہ کرم نام اور درست موبائل نمبر لکھیں (03XXXXXXXXX، 11 ہندسے)۔','bk.saved':'درخواست محفوظ ہو گئی — حوالہ {ref}۔ واٹس ایپ آپ کی درخواست کے ساتھ کھل گیا ہے؛ پیغام وہاں خود بھیجیں۔ یہ درخواست ہے، منظوری نہیں۔','bk.visitBtn':'پلاٹ دیکھنے کی درخواست','bk.waText':'السلام علیکم، BBB بکنگ درخواست۔\nحوالہ: {ref}\nقسم: {type}\nنام: {name}\nموبائل: {mobile}\nبراہ کرم واٹس ایپ پر حتمی تاریخ، وقت اور جگہ کی تصدیق کریں۔',
- 'ld.kicker':'میرے کام کا حساب · ادائیگی کا ریکارڈ','ld.h':'میرے کام کا حساب — آپ کی ادائیگیوں کا اپنا ریکارڈ','ld.warn':'یہ ڈیش بورڈ صرف آپ کے ذاتی حساب اور یاد دہانی کے لیے ہے۔ BBB کی ویب سائٹ کوئی ادائیگی وصول، منتقل، محفوظ یا ضمانت نہیں کرتی۔ خود درج کردہ ادائیگی کو تصدیق شدہ ادائیگی نہ سمجھیں۔','ld.tabPlot':'پلاٹ کی اقساط','ld.tabBuild':'تعمیر کی ادائیگیاں','ld.emptyH':'آپ کا حساب خالی ہے','ld.empty':'کوئی نمونہ رقم نہیں، کچھ ایجاد نہیں۔ شروع کرنے کے لیے نیچے اپنا پہلا منصوبہ شامل کریں — یہاں ہر عدد وہی ہوگا جو آپ نے اپنے کاغذات سے خود لکھا۔','ld.addProjH':'منصوبہ شامل کریں','ld.fProjName':'پلاٹ کا شناختی نمبر یا منصوبے کا نام (خود لکھیں)','ld.projPh':'مثلاً BBB-001 پلاٹ، یا: میرا گھر — چریاں','ld.fTotal':'معاہدے کی کل رقم (روپے) — اپنی اصل دستاویز سے درج کریں','ld.addProj':'منصوبہ شامل کریں','ld.addEntryH':'ادائیگی کا اندراج کریں','ld.fProject':'منصوبہ','ld.fDueDate':'مقررہ تاریخ','ld.fDueAmt':'واجب الادا رقم (روپے)','ld.fPaidAmt':'ادا شدہ رقم (روپے)','ld.fPaidDate':'ادائیگی کی تاریخ','ld.fReceipt':'ثبوت کا حوالہ (رسید نمبر)','ld.receiptPh':'رسید نمبر — شناختی کارڈ یا بینک اکاؤنٹ کبھی نہیں','ld.fStatus':'ریکارڈ کی حالت','ld.stSelf':'خود درج کردہ','ld.stVerify':'تصدیق کی درخواست','ld.stTeam':'ٹیم کی تصدیق موصول','ld.stageDone':'کام / مرحلہ مکمل ہے (ادائیگی سے پہلے جانچا ہوا)','ld.addEntry':'اندراج شامل کریں','ld.tTotal':'معاہدے کی کل رقم','ld.tPaidSelf':'ادا شدہ — خود درج شدہ','ld.tPaidTeam':'ادا شدہ — ٹیم سے تصدیق شدہ','ld.tBalance':'حسابی بقایا','ld.tNext':'اگلی مقررہ تاریخ','ld.dup':'ممکنہ دہرا اندراج','ld.checkReq':'معاہدے کے مطابق جانچ درکار — مرحلہ مکمل نشان زد نہیں','ld.daysLate':'{n} دن دیر','ld.sendVerify':'تصدیق کے لیے بھیجیں','ld.del':'حذف کریں','ld.noProj':'پہلے منصوبہ شامل کریں — اندراج کے لیے منصوبہ چاہیے۔','ld.projMsg':'منصوبہ شامل ہو گیا۔ اب نیچے اس کی ادائیگیاں درج کریں۔','ld.entryMsg':'اندراج شامل ہو گیا۔','ld.expH':'اپنا حساب محفوظ رکھیں','ld.expP':'آپ کا حساب صرف اسی براؤزر میں محفوظ ہے۔ «محفوظ کریں» دبائیں تو ایک نقل آپ کے پاس آ جائے گی — براؤزر صاف ہو جائے تو واپسی کا واحد راستہ یہی نقل ہے۔','ld.saveBtn':'محفوظ کریں','ld.more':'مزید','ld.moreNote':'کمپیوٹر کے لیے: یہی حساب فائل کی شکل میں، جو سپریڈ شیٹ میں کھل سکتی ہے، یا محفوظ نقل جو بعد میں واپس لائی جا سکے۔ زیادہ تر لوگوں کو ان کی ضرورت نہیں پڑتی۔','ld.dlJson':'JSON ڈاؤن لوڈ کریں','ld.dlCsv':'CSV ڈاؤن لوڈ کریں','ld.dlSummary':'خلاصہ ڈاؤن لوڈ کریں','ld.waSummary':'حساب کا خلاصہ واٹس ایپ کریں','ld.importBtn':'لیجر فائل درآمد کریں','ld.importApply':'میرا حساب اس فائل سے بدل دیں','ld.importCancel':'منسوخ کریں','ld.importInfo':'اس فائل میں ہے: {projs} · {n} ادائیگی ریکارڈ۔ درآمد کرنے سے اس براؤزر میں محفوظ حساب بدل جائے گا۔','ld.importBad':'یہ فائل BBB لیجر کے طور پر پڑھی نہیں جا سکی۔ کچھ نہیں بدلا گیا۔','ld.statusNote':'خود درج کردہ اندراج آپ کی اپنی اطلاع ہے۔ «ٹیم کی تصدیق موصول» بھی اسی براؤزر میں محفوظ ایک دعویٰ ہے، سرکاری ریکارڈ نہیں — اصل ثبوت BBB کی رسید یا تصدیقی پیغام ہے۔ اس لیجر میں شناختی کارڈ نمبر، بینک اکاؤنٹ یا دستاویزات کی مکمل اسکین کاپی کبھی نہ لکھیں۔','ld.waVerify':'السلام علیکم، براہ کرم اس ادائیگی ریکارڈ کی تصدیق کریں۔\nمنصوبہ: {proj}\nادا شدہ رقم: PKR {paid}\nادائیگی کی تاریخ: {date}\nرسید کا حوالہ: {receipt}\nلیجر شناخت: {id}\nثبوت میں اسی چیٹ میں الگ منسلک کروں گا/گی۔','ld.waSummaryText':'السلام علیکم، میرے BBB حساب کا خلاصہ ({tab}):\nمعاہدے کی کل رقم: {total}\nادا شدہ (خود درج شدہ): {self}\nادا شدہ (ٹیم سے تصدیق شدہ): {team}\nحسابی بقایا: {bal}\nاگلی مقررہ تاریخ: {next}',
+ 'nav.booking':'بکنگ','nav.products':'ڈیجیٹل پروڈکٹس',
+ 'bk.kicker':'بکنگ · درخواستیں','bk.h':'بکنگ اور درخواستیں','bk.intro':'تین درخواستوں کے لیے ایک ہی فارم: پلاٹ دیکھنا، دفتر میں ملاقات، یا فون پر بات۔ یہاں نہ سلاٹ ہیں نہ فوری منظوری — آپ درخواست بھیجتے ہیں، اور حتمی تاریخ، وقت اور جگہ کی تصدیق BBB ٹیم واٹس ایپ پر کرتی ہے۔','bk.formH':'دیکھنے، ملاقات یا مشاورت کی درخواست','bk.fType':'آپ کیا چاہتے ہیں؟ *','bk.typeVisit':'پلاٹ دیکھنا','bk.typeMeet':'دفتر میں ملاقات','bk.typeConsult':'فون یا واٹس ایپ مشاورت','bk.fListing':'لسٹنگ / منصوبے کا نمبر (اختیاری)','bk.listingPh':'مثلاً BBB-001','bk.fDate':'ترجیحی تاریخ','bk.dateNote':'اپنی پسند کی تاریخ بتائیں۔ ملاقات کی حتمی تاریخ اور وقت BBB ٹیم واٹس ایپ پر تصدیق کرے گی۔','bk.fTime':'ترجیحی وقت','bk.timeMorning':'صبح','bk.timeNoon':'دوپہر','bk.timeEvening':'شام','bk.fDetails':'تفصیل (اختیاری)','bk.detailsPh':'جو بات ٹیم کو پہلے سے معلوم ہونی چاہیے…','bk.submit':'درخواست واٹس ایپ پر بھیجیں','bk.note':'یہ درخواست ہے، منظوری نہیں۔ واٹس ایپ کھلنا درخواست کا پہنچ جانا نہیں — پیغام وہاں خود بھیجیں۔ وقت اور جگہ کی تصدیق ٹیم الگ سے کرے گی۔ اس عوامی فارم میں پلاٹ کا اصل مقام یا مالک کا رابطہ ظاہر نہیں ہوتا۔','bk.myH':'میری درخواستیں','bk.mySub':'صرف اسی براؤزر میں محفوظ — دوسرے فون یا BBB دفتر میں خود سے ظاہر نہیں ہوتیں۔ ٹیم کی تصدیق آنے پر حیثیت خود بدلیں؛ سائٹ خود سے کسی ملاقات کو منظور نہیں لکھتی۔','bk.empty':'ابھی کوئی درخواست نہیں۔ پہلی درخواست کے لیے اوپر والا فارم بھریں۔','bk.ref':'حوالہ','bk.fStatus':'ریکارڈ کی حالت','bk.stDraft':'درخواست تیار','bk.stSent':'درخواست ارسال','bk.stConfirmed':'ٹیم نے ملاقات منظور کی','bk.stChanged':'تبدیلی یا منسوخی','bk.msgRequired':'براہ کرم نام اور درست موبائل نمبر لکھیں (03XXXXXXXXX، 11 ہندسے)۔','bk.saved':'درخواست محفوظ ہو گئی — حوالہ {ref}۔ واٹس ایپ آپ کی درخواست کے ساتھ کھل گیا ہے؛ پیغام وہاں خود بھیجیں۔ یہ درخواست ہے، منظوری نہیں۔','bk.visitBtn':'پلاٹ دیکھنے کی درخواست','bk.waText':'السلام علیکم، BBB بکنگ درخواست۔\nحوالہ: {ref}\nقسم: {type}\nنام: {name}\nموبائل: {mobile}\nبراہ کرم واٹس ایپ پر حتمی تاریخ، وقت اور جگہ کی تصدیق کریں۔',
  'pd.kicker':'ڈیجیٹل پروڈکٹس','pd.h':'ڈیجیٹل پروڈکٹس — مفت ڈاؤن لوڈ اور معاوضہ پیک','pd.intro':'مفت پروڈکٹس معلومات دیتی ہیں؛ معاوضہ پروڈکٹس آپ کا کوئی حقیقی کام مکمل کرنے میں مدد دیتی ہیں۔ مفت فائلیں اسی صفحے سے سیدھی ڈاؤن لوڈ ہوتی ہیں — نہ واٹس ایپ، نہ ادائیگی، نہ لاگن۔ معاوضہ فائلیں اس ویب سائٹ پر کبھی نہیں رکھی جاتیں: واٹس ایپ سے آرڈر کریں، ٹیم اہلیت اور قیمت جانچے، ادائیگی کا طریقہ بتائے، اور تصدیق کے بعد فائل واٹس ایپ پر بھیجے۔','pd.freeH':'مفت — فوری ڈاؤن لوڈ','pd.paidH':'معاوضہ — واٹس ایپ سے آرڈر','pd.what':'کیا ملے گا','pd.format':'فارمیٹ','pd.notIncl':'کیا شامل نہیں','pd.infoDate':'معلومات کی تاریخ','pd.price':'قیمت','pd.delivery':'ڈیلیوری','pd.dl':'ڈاؤن لوڈ کریں','pd.order':'واٹس ایپ سے آرڈر کریں','pd.free':'مفت','pd.contactPrice':'قیمت کے لیے رابطہ کریں','pd.gharPrice':'7,500 روپے · BBB پلاٹ کے ساتھ مفت','pd.instant':'اسی صفحے سے فوری ڈاؤن لوڈ','pd.waDelivery':'واٹس ایپ پر — ٹیم کی اہلیت، قیمت اور ادائیگی کی تصدیق کے بعد','pd.notLegal':'قانونی مشورہ نہیں','pd.dateNov':'نومبر 2026 — اسی صفحے پر تاریخ کے ساتھ دکھائے گئے بینچ مارک','pd.dateTools':'اسی صفحے کے لائیو ٹولز سے تیار شدہ','pd.waOrder':'السلام علیکم، مجھے یہ BBB ڈیجیٹل پروڈکٹ چاہیے: {name}۔ براہ کرم اہلیت، قیمت اور ادائیگی کا طریقہ بتائیں۔ میں سمجھتا/سمجھتی ہوں کہ فائل ویب سائٹ پر نہیں ہے اور ڈیلیوری تصدیق کے بعد واٹس ایپ پر ہوگی۔',
  'svc.avail':'دستیابی معلوم کریں','svc.send':'ہمیں کیا بھیجیں؟','svc.request':'اس سروس کی درخواست کریں',
  'svcLst.view':'لسٹنگ دیکھیں','svcLst.hide':'لسٹنگ بند کریں','svcLst.h':'کام کی لسٹنگ','svcLst.note':'یہ کام کی اقسام کی لسٹنگ ہے۔ اصل کام کی تصویر اور تفصیل کے لیے رابطہ کریں۔','svcLst.price':'قیمت کے لیے رابطہ کریں','svcLst.ask':'اس کام کے لیے پوچھیں','svcLst.other':'دیگر','svcLst.otherDesc':'اس سروس میں کچھ اور چاہیے؟ واٹس ایپ پر پوچھیں۔','svcLst.img':'عکاسی تصویر','svcLst.wa':'السلام علیکم، مجھے اس کام کے بارے میں پوچھنا ہے۔ سروس: {service}۔ کام: {item}۔ براہ کرم قیمت اور تفصیل بتائیں۔',
@@ -3064,160 +2961,16 @@ function renderRequests(){
   if (!bkRequests.length){ box.innerHTML = '<p class="field-note">' + esc(t('bk.empty')) + '</p>'; return; }
   box.innerHTML = bkRequests.map(function(r){
     var opts = Object.keys(BK_STATUS_KEYS).map(function(k){ return '<option value="' + k + '"' + (r.status === k ? ' selected' : '') + '>' + esc(t(BK_STATUS_KEYS[k])) + '</option>'; }).join('');
-    return '<div class="ld-entry mb-3"><div class="flex flex-wrap gap-1.5 items-center"><span class="pchip chip-id">' + esc(r.ref) + '</span><span class="pchip chip-c">' + esc(t(BK_TYPES[r.type] || 'bk.typeConsult')) + '</span>' + (r.listing ? '<span class="pchip chip-c" dir="ltr">' + esc(r.listing) + '</span>' : '') + '</div>'
+    return '<div class="entry-card mb-3"><div class="flex flex-wrap gap-1.5 items-center"><span class="pchip chip-id">' + esc(r.ref) + '</span><span class="pchip chip-c">' + esc(t(BK_TYPES[r.type] || 'bk.typeConsult')) + '</span>' + (r.listing ? '<span class="pchip chip-c" dir="ltr">' + esc(r.listing) + '</span>' : '') + '</div>'
      + '<p class="text-[14px] text-inksoft mt-2">' + esc(r.name) + (r.date ? ' · <bdi dir="ltr" class="num">' + esc(r.date) + '</bdi>' : '') + (r.time && BK_TIMES[r.time] ? ' · ' + esc(t(BK_TIMES[r.time])) : '') + (r.details ? '<br/>' + esc(r.details) : '') + '</p>'
-     + '<label class="fld mt-2"><span>' + esc(t('ld.fStatus')) + '</span><select onchange="bkSetStatus(\'' + r.ref + '\', this.value)">' + opts + '</select></label></div>';
+     + '<label class="fld mt-2"><span>' + esc(t('bk.fStatus')) + '</span><select onchange="bkSetStatus(\'' + r.ref + '\', this.value)">' + opts + '</select></label></div>';
   }).join('');
 }
 
-/* ── My Ledger ── */
-var ldProjects = pload('bbb_ledger_projects', []);
-var ldEntries = pload('bbb_ledger_entries', []);
-var ldTab = 'plot';
-var ldImportData = null;
-var LD_STATUS_KEYS = {self:'ld.stSelf', verify:'ld.stVerify', team:'ld.stTeam'};
-function ldSaveAll(){ psave('bbb_ledger_projects', ldProjects); psave('bbb_ledger_entries', ldEntries); }
-function ldProjById(id){ for (var i = 0; i < ldProjects.length; i++){ if (ldProjects[i].id === id) return ldProjects[i]; } return null; }
-function ldTabProjects(){ return ldProjects.filter(function(p){ return p.kind === ldTab; }); }
-function ldTabEntries(){ var ids = ldTabProjects().map(function(p){ return p.id; }); return ldEntries.filter(function(e){ return ids.indexOf(e.proj) >= 0; }); }
-function ledgerTab(k){ ldTab = k; renderLedger(); }
-function ledgerAddProject(){
-  var msgEl = document.getElementById('ld-proj-msg');
-  var name = document.getElementById('ld-proj-name').value.trim();
-  var total = parseFloat(document.getElementById('ld-proj-total').value) || 0;
-  if (!name || total <= 0){ msgEl.textContent = t('ld.fProjName') + ' · ' + t('ld.fTotal'); return; }
-  ldProjects.push({id: 'LP-' + Date.now().toString(36).toUpperCase(), kind: ldTab, name: name, total: total});
-  ldSaveAll();
-  document.getElementById('ld-proj-name').value = ''; document.getElementById('ld-proj-total').value = '';
-  msgEl.textContent = t('ld.projMsg');
-  renderLedger();
-}
-function ledgerAddEntry(){
-  var msgEl = document.getElementById('ld-entry-msg');
-  var projSel = document.getElementById('ld-e-proj');
-  if (!projSel || !projSel.value){ msgEl.textContent = t('ld.noProj'); return; }
-  var e = {id: 'LE-' + Date.now().toString(36).toUpperCase() + Math.floor(Math.random()*90+10), proj: projSel.value,
-    dueDate: document.getElementById('ld-e-duedate').value || '', dueAmt: parseFloat(document.getElementById('ld-e-dueamt').value) || 0,
-    paidAmt: parseFloat(document.getElementById('ld-e-paidamt').value) || 0, paidDate: document.getElementById('ld-e-paiddate').value || '',
-    receipt: document.getElementById('ld-e-receipt').value.trim(), status: document.getElementById('ld-e-status').value,
-    stage: !!document.getElementById('ld-e-stage').checked};
-  ldEntries.push(e); ldSaveAll();
-  msgEl.textContent = t('ld.entryMsg');
-  renderLedger();
-}
-function ldSetStatus(id, val){ ldEntries.forEach(function(e){ if (e.id === id) e.status = val; }); ldSaveAll(); renderLedger(); }
-function ldDelEntry(id){ ldEntries = ldEntries.filter(function(e){ return e.id !== id; }); ldSaveAll(); renderLedger(); }
-function ldDelProject(id){ ldProjects = ldProjects.filter(function(p){ return p.id !== id; }); ldEntries = ldEntries.filter(function(e){ return e.proj !== id; }); ldSaveAll(); renderLedger(); }
-function ldTotals(){
-  var projs = ldTabProjects(), ents = ldTabEntries();
-  var total = projs.reduce(function(s,p){ return s + (+p.total || 0); }, 0);
-  var self = 0, team = 0;
-  ents.forEach(function(e){ if (e.status === 'team') team += (+e.paidAmt || 0); else self += (+e.paidAmt || 0); });
-  var next = null;
-  ents.filter(function(e){ return (+e.paidAmt || 0) < (+e.dueAmt || 0) && e.dueDate; }).sort(function(a,b){ return a.dueDate < b.dueDate ? -1 : 1; }).forEach(function(e){ if (!next) next = e; });
-  return {total: total, self: self, team: team, bal: total - self - team, next: next, ents: ents, projs: projs};
-}
-function ldSendVerify(id){
-  var e = null; ldEntries.forEach(function(x){ if (x.id === id) e = x; }); if (!e) return;
-  e.status = 'verify'; ldSaveAll(); renderLedger();
-  var p = ldProjById(e.proj);
-  window.open(waLink(fillTpl(t('ld.waVerify'), {proj: p ? p.name : e.proj, paid: (e.paidAmt || 0).toLocaleString('en-US'), date: e.paidDate || e.dueDate || '—', receipt: e.receipt || '—', id: e.id})), '_blank');
-}
-function renderLedger(){
-  var bP = document.getElementById('ld-tab-plot'), bB = document.getElementById('ld-tab-build');
-  if (bP) bP.classList.toggle('on', ldTab === 'plot');
-  if (bB) bB.classList.toggle('on', ldTab === 'build');
-  var stageRow = document.getElementById('ld-stage-row'); if (stageRow) stageRow.style.display = (ldTab === 'build') ? '' : 'none';
-  var emptyEl = document.getElementById('ld-empty'), mainEl = document.getElementById('ld-main');
-  var hasAny = ldProjects.length > 0;
-  if (emptyEl) emptyEl.classList.toggle('hidden', hasAny);
-  if (mainEl) mainEl.classList.toggle('hidden', !hasAny);
-  var T = ldTotals();
-  var projSel = document.getElementById('ld-e-proj');
-  if (projSel){ var cur = projSel.value; projSel.innerHTML = T.projs.map(function(p){ return '<option value="' + p.id + '">' + esc(p.name) + '</option>'; }).join(''); if (cur && ldProjById(cur) && ldProjById(cur).kind === ldTab) projSel.value = cur; }
-  var projBox = document.getElementById('ld-projects');
-  if (projBox) projBox.innerHTML = T.projs.map(function(p){
-    return '<div class="flex flex-wrap items-center gap-2 py-2 border-t border-linec/70"><span class="font-semibold text-deep text-[14.5px] flex-1">' + esc(p.name) + '</span><bdi dir="ltr" class="num font-semibold text-deep">' + fmtShort(+p.total || 0) + '</bdi><button type="button" class="btn-mini border border-deep/30 text-deep bg-white" onclick="ldDelProject(\'' + p.id + '\')">' + esc(t('ld.del')) + '</button></div>';
-  }).join('');
-  if (!hasAny) return;
-  document.getElementById('ld-sum-total').textContent = fmtShort(T.total);
-  document.getElementById('ld-sum-self').textContent = fmtShort(T.self);
-  document.getElementById('ld-sum-team').textContent = fmtShort(T.team);
-  document.getElementById('ld-sum-bal').textContent = fmtShort(T.bal);
-  var nextEl = document.getElementById('ld-sum-next'), lateEl = document.getElementById('ld-sum-late');
-  if (T.next){
-    nextEl.textContent = T.next.dueDate;
-    var days = Math.floor((new Date(todayStr() + 'T00:00:00') - new Date(T.next.dueDate + 'T00:00:00')) / 86400000);
-    if (ldTab === 'build' && !T.next.stage){ lateEl.innerHTML = '<span class="pchip chip-p">' + esc(t('ld.checkReq')) + '</span>'; }
-    else if (days > 0){ lateEl.innerHTML = '<span style="color:#B42318;font-weight:600">' + esc(fillTpl(t('ld.daysLate'), {n: days})) + '</span>'; }
-    else lateEl.textContent = '';
-  } else { nextEl.textContent = '—'; lateEl.textContent = ''; }
-  var sorted = T.ents.slice().sort(function(a,b){ return (a.dueDate || '9999') < (b.dueDate || '9999') ? -1 : 1; });
-  document.getElementById('ld-entries').innerHTML = sorted.map(function(e){
-    var p = ldProjById(e.proj);
-    var dup = T.ents.filter(function(x){ return x.proj === e.proj && x.dueDate === e.dueDate && (+x.dueAmt || 0) === (+e.dueAmt || 0) && e.dueDate; }).length > 1;
-    var opts = Object.keys(LD_STATUS_KEYS).map(function(k){ return '<option value="' + k + '"' + (e.status === k ? ' selected' : '') + '>' + esc(t(LD_STATUS_KEYS[k])) + '</option>'; }).join('');
-    return '<div class="ld-entry"><div class="flex flex-wrap gap-1.5 items-center"><span class="pchip chip-id">' + esc(e.id) + '</span><span class="pchip ' + (e.status === 'team' ? 'chip-v' : 'chip-p') + '">' + esc(t(LD_STATUS_KEYS[e.status] || 'ld.stSelf')) + '</span>' + (dup ? '<span class="pchip chip-rej">' + esc(t('ld.dup')) + '</span>' : '') + (ldTab === 'build' && !e.stage ? '<span class="pchip chip-p">' + esc(t('ld.checkReq')) + '</span>' : '') + '</div>'
-     + '<p class="font-pop font-semibold text-deep mt-2">' + esc(p ? p.name : '') + '</p>'
-     + '<p class="text-[14px] text-inksoft mt-1">' + esc(t('ld.fDueDate')) + ': <bdi dir="ltr" class="num">' + esc(e.dueDate || '—') + '</bdi> · ' + esc(t('ld.fDueAmt')) + ': <bdi dir="ltr" class="num">' + fmtShort(+e.dueAmt || 0) + '</bdi><br/>' + esc(t('ld.fPaidAmt')) + ': <bdi dir="ltr" class="num">' + fmtShort(+e.paidAmt || 0) + '</bdi> · ' + esc(t('ld.fPaidDate')) + ': <bdi dir="ltr" class="num">' + esc(e.paidDate || '—') + '</bdi>' + (e.receipt ? '<br/>' + esc(t('ld.fReceipt')) + ': ' + esc(e.receipt) : '') + '</p>'
-     + '<div class="flex flex-wrap gap-2 items-end mt-3"><label class="fld" style="flex:1;min-width:170px"><span>' + esc(t('ld.fStatus')) + '</span><select onchange="ldSetStatus(\'' + e.id + '\', this.value)">' + opts + '</select></label>'
-     + '<button type="button" class="btn-mini btn-ok" onclick="ldSendVerify(\'' + e.id + '\')">' + esc(t('ld.sendVerify')) + '</button>'
-     + '<button type="button" class="btn-mini border border-deep/30 text-deep bg-white" onclick="ldDelEntry(\'' + e.id + '\')">' + esc(t('ld.del')) + '</button></div></div>';
-  }).join('');
-}
-function toggleLedgerMore(ev){
-  if (ev) ev.preventDefault();
-  var det = document.getElementById('ld-more-details');
-  var body = document.getElementById('ld-more-body');
-  if (!body) return;
-  var show = body.hidden;
-  body.hidden = !show;
-  if (det) det.open = show;
-}
-function ldDownload(name, text, mime){
+/* ── File download helper (used by Digital Products) ── */
+function fileDownload(name, text, mime){
   var blob = new Blob([text], {type: mime || 'text/plain;charset=utf-8'});
   var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; a.click(); URL.revokeObjectURL(a.href);
-}
-function ledgerExport(kind){
-  var data = {app: 'BBB Ledger', exported: new Date().toISOString(), projects: ldProjects, entries: ldEntries};
-  if (kind === 'json'){ ldDownload('bbb-ledger.json', JSON.stringify(data, null, 2), 'application/json'); return; }
-  if (kind === 'csv'){
-    var rows = [['id','project','kind','due_date','due_amount','paid_amount','paid_date','receipt','status','stage_complete']];
-    ldEntries.forEach(function(e){ var p = ldProjById(e.proj); rows.push([e.id, p ? p.name : '', p ? p.kind : '', e.dueDate, e.dueAmt, e.paidAmt, e.paidDate, e.receipt, e.status, e.stage ? 'yes' : 'no']); });
-    ldDownload('bbb-ledger.csv', rows.map(function(r){ return r.map(function(c){ return '"' + String(c === undefined ? '' : c).replace(/"/g, '""') + '"'; }).join(','); }).join('\n'), 'text/csv;charset=utf-8');
-    return;
-  }
-  var T1 = ldTotals();
-  ldDownload('bbb-ledger-summary.txt', fillTpl(t('ld.waSummaryText'), {tab: t(ldTab === 'plot' ? 'ld.tabPlot' : 'ld.tabBuild'), total: fmtShort(T1.total), self: fmtShort(T1.self), team: fmtShort(T1.team), bal: fmtShort(T1.bal), next: T1.next ? T1.next.dueDate : '—'}) + '\n\n' + t('ld.warn'));
-}
-function ledgerWaSummary(){
-  var T = ldTotals();
-  window.open(waLink(fillTpl(t('ld.waSummaryText'), {tab: t(ldTab === 'plot' ? 'ld.tabPlot' : 'ld.tabBuild'), total: fmtShort(T.total), self: fmtShort(T.self), team: fmtShort(T.team), bal: fmtShort(T.bal), next: T.next ? T.next.dueDate : '—'})), '_blank');
-}
-function ledgerImportPick(input){
-  var f = input.files && input.files[0]; if (!f) return;
-  var reader = new FileReader();
-  reader.onload = function(){
-    var box = document.getElementById('ld-import-box'), info = document.getElementById('ld-import-info');
-    try {
-      var d = JSON.parse(reader.result);
-      if (!d || !Array.isArray(d.projects) || !Array.isArray(d.entries)) throw new Error('shape');
-      ldImportData = d;
-      info.textContent = fillTpl(t('ld.importInfo'), {projs: d.projects.map(function(p){ return p.name; }).join(' · ') || '—', n: d.entries.length});
-    } catch(e){ ldImportData = null; info.textContent = t('ld.importBad'); }
-    box.classList.remove('hidden');
-  };
-  reader.readAsText(f);
-}
-function ledgerImportApply(){
-  if (!ldImportData) return;
-  ldProjects = ldImportData.projects; ldEntries = ldImportData.entries;
-  ldSaveAll(); ledgerImportCancel(); renderLedger();
-}
-function ledgerImportCancel(){
-  ldImportData = null;
-  var box = document.getElementById('ld-import-box'); if (box) box.classList.add('hidden');
-  var fi = document.getElementById('ld-import-file'); if (fi) fi.value = '';
 }
 
 /* ── Digital Products ── */
@@ -3277,7 +3030,7 @@ function pdDownload(key){
   else if (key === 'sample'){ var s1 = GHAR_STAGES[0][LANG] || GHAR_STAGES[0].en; var gg = document.getElementById('gOutTotal'); txt = (U ? 'گھر پیک — مفت نمونہ' : 'GHAR PACK — FREE SAMPLE') + '\n\n' + (U ? 'کیلکولیٹر خلاصہ: ' : 'Calculator summary: ') + (gg ? gg.textContent : '—') + '\n\n' + (U ? 'مرحلہ 1: ' : 'Stage 1: ') + s1.t + '\n' + s1.w + '\n' + (U ? 'جانچیں: ' : 'Check: ') + s1.c + '\n' + (U ? 'خبردار: ' : 'Watch out: ') + s1.x + '\n' + (U ? 'ادائیگی: ' : 'Pay next: ') + s1.p + '\n\n' + (U ? 'مکمل پیک (12 مراحل، ذاتی منصوبہ، چیک لسٹیں، ادائیگی جداول) BBB پلاٹ کے ساتھ مفت، باقی سب کے لیے 7,500 روپے — واٹس ایپ سے آرڈر کریں۔' : 'The full pack (12 stages, personal plan, checklists, payment tables) is free with a BBB plot, PKR 7,500 for everyone else — order on WhatsApp.'); }
   else if (key === 'papers') txt = pdList(U ? 'فرد کی چیک لسٹ' : 'FARD CHECKLIST', U ? ['تازہ ترین فرد محکمۂ مال کے ریکارڈ سے حاصل کریں۔','مالک کا نام اور حصہ — بیچنے والے سے ملتا ہے؟','کھاتہ / خسرہ نمبر پلاٹ سے ملائیں۔','کوئی رہن یا بوجھ درج ہو تو پٹواری سے پوچھیں۔'] : ['Obtain the latest fard from the revenue record.','Owner name and share — do they match the seller?','Match khata / khasra numbers to the plot.','If any mortgage or burden is recorded, ask the patwari.']) + '\n\n' + pdList(U ? 'رجسٹری کی چیک لسٹ' : 'REGISTRY CHECKLIST', U ? ['رجسٹرڈ دستاویز کی نقل دیکھیں — بیچنے والا ہی دستاویز کا مالک ہو۔','رجسٹری نمبر رجسٹرار دفتر سے قابلِ تصدیق ہو۔','دستاویز میں حدود و رقبہ موقع سے ملائیں۔'] : ['See a copy of the registered deed — the seller must be the deed’s owner.','The registry number should be verifiable at the registrar’s office.','Match the deed’s boundaries and area against the site.']) + '\n\n' + pdList(U ? 'انتقال کی چیک لسٹ' : 'TRANSFER (INTIQAL) CHECKLIST', U ? ['رجسٹری کے بعد انتقال محکمۂ مال کے ریکارڈ میں درج ہوا؟','انتقال نمبر نوٹ کریں۔','حاضر ہونے اور شناخت کی شرائط دفتر سے پہلے پوچھیں۔','یہ چیک لسٹیں قانونی مشورہ نہیں — حتمی جانچ وکیل / محکمۂ مال سے۔'] : ['Was the transfer entered in the revenue record after the registry?','Note the transfer (intiqal) number.','Ask the office in advance about attendance and ID requirements.','These checklists are not legal advice — final checking is with a lawyer / the Revenue Department.']);
   else txt = head;
-  ldDownload('bbb-' + key + '.txt', head + txt);
+  fileDownload('bbb-' + key + '.txt', head + txt);
   if (typeof gCount === 'function'){ gCount('bbb_ghar_dl'); if (typeof renderGharTeam === 'function') renderGharTeam(); }
 }
 
@@ -3340,7 +3093,6 @@ function setLang(lang, save){
   renderPortalAll(); calculateCost();
   if (typeof renderGhar === 'function') renderGhar();
   if (typeof renderRequests === 'function') renderRequests();
-  if (typeof renderLedger === 'function') renderLedger();
   if (typeof renderProducts === 'function') renderProducts();
   if (currentElev !== null && currentElev !== undefined) { var i = currentElev; openLightbox(i); }
   observeReveals();
